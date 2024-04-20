@@ -8,6 +8,8 @@ const BREAK_BONUS = 1.0
 
 var momentum = Vector2(0, 0)
 
+signal player_collisions_with_hazard
+
 func are_oposite_numbers(n1: float, n2: float):
 	if (n1 > 0 and n2 < 0):
 		return true
@@ -29,8 +31,6 @@ func _physics_process(delta):
 	if (are_oposite_vectors(direction, momentum)):
 		break_bonus = BREAK_BONUS
 		print("BREAAAAAAAAK")
-	else:
-		print(" ")
 	
 	momentum += direction * delta * ACCELERATION * break_bonus
 	
