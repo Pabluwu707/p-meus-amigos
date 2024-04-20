@@ -31,9 +31,11 @@ func _physics_process(delta):
 	var collision_info = move_and_collide(velocity)
 	
 	if collision_info:
-		velocity = velocity.bounce(collision_info.get_normal())
-		momentum = momentum.rotated(momentum.angle_to(velocity)) * 0.7
-		on_knockback()
+		print("ayayayayayaya")
+		if (!invencible):
+			velocity = velocity.bounce(collision_info.get_normal())
+			momentum = momentum.rotated(momentum.angle_to(velocity)) * 0.7
+			on_knockback()
 		
 	elif playable:
 		var direction = Input.get_vector("left", "right", "up", "down")
