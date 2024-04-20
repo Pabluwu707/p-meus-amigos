@@ -1,13 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://blogo65muktlv"]
+[gd_scene load_steps=5 format=3 uid="uid://blogo65muktlv"]
 
 [ext_resource type="PackedScene" uid="uid://0rthx7bvralu" path="res://scenes/player.tscn" id="1_hjxq3"]
-[ext_resource type="PackedScene" path="res://scenes/planet.tscn" id="2_c05fd"]
-[ext_resource type="PackedScene" path="res://scenes/asteroid_hazard.tscn" id="3_q55hx"]
+[ext_resource type="PackedScene" uid="uid://ba62prgnkj1lw" path="res://scenes/planet.tscn" id="2_c05fd"]
+[ext_resource type="PackedScene" uid="uid://bqdrt7oox6d1c" path="res://scenes/asteroid_hazard.tscn" id="3_q55hx"]
+[ext_resource type="PackedScene" uid="uid://b4gt7stkwumbt" path="res://scenes/comet_spawner.tscn" id="4_yl4ql"]
 
 [node name="Main" type="Node"]
 
 [node name="Planet" parent="." instance=ExtResource("2_c05fd")]
-position = Vector2(543, 283)
+position = Vector2(1083, 536)
 
 [node name="Player" parent="." instance=ExtResource("1_hjxq3")]
 
@@ -22,3 +23,6 @@ position = Vector2(127, 491)
 
 [node name="AsteroidHazard4" parent="." instance=ExtResource("3_q55hx")]
 position = Vector2(754, 548)
+
+[node name="CometSpawner" parent="." instance=ExtResource("4_yl4ql")]
+position = Vector2(416, 419)
