@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cdxwedukr5yl" path="res://scenes/level_controller.tscn" id="2_sidqs"]
 [ext_resource type="PackedScene" uid="uid://p2sud2l3qm5l" path="res://scenes/camera_2d.tscn" id="4_w7exc"]
 [ext_resource type="PackedScene" uid="uid://cdt2egiu025pg" path="res://scenes/ui.tscn" id="5_7t4hg"]
-[ext_resource type="PackedScene" uid="uid://c35nl45fuxt6a" path="res://scenes/car_spawner.tscn" id="7_jono8"]
+[ext_resource type="PackedScene" uid="uid://covfs4itgi7x8" path="res://scenes/car_spawner.tscn" id="7_jono8"]
 [ext_resource type="PackedScene" uid="uid://ba62prgnkj1lw" path="res://scenes/planet.tscn" id="8_cbiy8"]
 [ext_resource type="PackedScene" uid="uid://bqdrt7oox6d1c" path="res://scenes/asteroid_hazard.tscn" id="9_4eunf"]
 
