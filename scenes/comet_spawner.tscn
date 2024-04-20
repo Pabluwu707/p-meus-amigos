@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4gt7stkwumbt"]
+
+[ext_resource type="Script" path="res://scripts/comet_spawner.gd" id="1_s2ihj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdgbl"]
+size = Vector2(68, 796)
+
+[sub_resource type="Curve2D" id="Curve2D_k3n2o"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 156, -110, 0, 0, 0, 0, 855, -70)
+}
+point_count = 2
+
+[node name="CometSpawner" type="Area2D"]
+script = ExtResource("1_s2ihj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kdgbl")
+debug_color = Color(0.745098, 0.223529, 0.980392, 0.419608)
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(31, -263)
+curve = SubResource("Curve2D_k3n2o")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+unique_name_in_owner = true
+position = Vector2(156, -110)
+rotation = 0.0571623
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

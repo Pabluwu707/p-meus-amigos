@@ -33,7 +33,7 @@ shape = SubResource("CircleShape2D_orot5")
 
 [node name="KnockbackTimer" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 0.4
+wait_time = 0.3
 one_shot = true
 
 [node name="GracePeriodTimer" type="Timer" parent="."]

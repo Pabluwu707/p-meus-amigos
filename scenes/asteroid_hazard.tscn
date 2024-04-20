@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqdrt7oox6d1c"]
+
+[ext_resource type="Script" path="res://scripts/asteroid_hazard.gd" id="1_cpxdu"]
+[ext_resource type="Texture2D" uid="uid://dvral7uadmu8m" path="res://borrar2.png" id="1_r18wq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iewyh"]
+radius = 27.0
+
+[node name="AsteroidHazard" type="StaticBody2D"]
+script = ExtResource("1_cpxdu")
+
+[node name="Borrar2" type="Sprite2D" parent="."]
+position = Vector2(3.8147e-06, 4)
+scale = Vector2(0.0833334, 0.0833334)
+texture = ExtResource("1_r18wq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_iewyh")

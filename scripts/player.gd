@@ -11,6 +11,8 @@ var in_knockback = false
 var invencible = false
 var playable = true
 
+signal player_collisions_with_hazard
+
 func are_oposite_numbers(n1: float, n2: float):
 	if (n1 > 0 and n2 < 0):
 		return true
@@ -34,6 +36,7 @@ func _physics_process(delta):
 		velocity = -velocity
 		momentum = momentum.rotated(momentum.angle_to(velocity)) * 0.7
 		on_knockback()
+
 		
 	elif playable:
 		var direction = Input.get_vector("left", "right", "up", "down")
@@ -45,8 +48,6 @@ func _physics_process(delta):
 		if are_oposite_vectors(direction, velocity):
 			break_bonus = BREAK_BONUS
 			print("BREAAAAAAAAK")
-		else:
-			print(" ")
 		
 		momentum += direction * delta * ACCELERATION * break_bonus
 		

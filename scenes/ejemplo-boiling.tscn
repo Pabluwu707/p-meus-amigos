@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://drudmf3o6ivds"]
+[gd_scene load_steps=6 format=3 uid="uid://cek04hcxvr0wc"]
 
 [ext_resource type="Shader" path="res://boiling-shader.gdshader" id="1_80nfp"]
 [ext_resource type="Texture2D" uid="uid://djkmt133u7oqi" path="res://amigo-momento.jpg" id="2_41lfq"]
