@@ -29,7 +29,13 @@ func _physics_process(delta):
 	var collision_info = move_and_collide(velocity)
 	
 	if collision_info:
+<<<<<<< Updated upstream
 		velocity = velocity.bounce(collision_info.get_normal())
+=======
+		print("ayayayayayaya")
+		#velocity = velocity.bounce(collision_info.get_normal())
+		velocity = -velocity
+>>>>>>> Stashed changes
 		momentum = momentum.rotated(momentum.angle_to(velocity)) * 0.7
 		on_knockback()
 		
