@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://blogo65muktlv"]
+[gd_scene load_steps=3 format=3 uid="uid://blogo65muktlv"]
+
+[ext_resource type="PackedScene" uid="uid://0rthx7bvralu" path="res://scenes/player.tscn" id="1_hjxq3"]
+[ext_resource type="PackedScene" uid="uid://ba62prgnkj1lw" path="res://scenes/planet.tscn" id="2_c05fd"]
 
 [node name="Main" type="Node"]
+
+[node name="Planet" parent="." instance=ExtResource("2_c05fd")]
+position = Vector2(543, 283)
+
+[node name="Player" parent="." instance=ExtResource("1_hjxq3")]

@@ -1,12 +1,15 @@
 extends CharacterBody2D
 
-
-const MAX_SPEED = 400.0
+const MAX_SPEED = 7.5
 const ACCELERATION = 2.0
 const RESISTANCE = 2.0
-const BREAK_BONUS = 1.0
+const BREAK_BONUS = 2.0
+const GRACE_PERIOD = 3.0 #in seconds
 
 var momentum = Vector2(0, 0)
+var bouncing = false
+var in_knockback = false
+var playable = true
 
 func are_oposite_numbers(n1: float, n2: float):
 	if (n1 > 0 and n2 < 0):
@@ -22,22 +25,46 @@ func are_oposite_vectors(v1: Vector2, v2: Vector2):
 		return false
 
 func _physics_process(delta):
+	
+	var collision_info = move_and_collide(velocity)
+	
+	if collision_info:
+		velocity = velocity.bounce(collision_info.get_normal())
+		momentum = momentum.rotated(momentum.angle_to(velocity)) * 0.7
+		bouncing = true
+		on_knockback()
+		
+	elif playable:
+		var direction = Input.get_vector("left", "right", "up", "down")
+		
+		if (in_knockback):
+			direction = Vector2(0, 0)
+		
+		if direction.length() != 0:
+			bouncing = false
+		
+		var break_bonus = 1
+		if (are_oposite_vectors(direction, velocity) and !bouncing):
+			break_bonus = BREAK_BONUS
+			print("BREAAAAAAAAK")
+		else:
+			print(" ")
+		
+		momentum += direction * delta * ACCELERATION * break_bonus
+		
+		if momentum.length() > 1.0:
+			momentum = momentum.normalized()
+			
+		if direction.length() == 0:
+			momentum -= momentum * RESISTANCE * delta
 
-	var direction = Input.get_vector("left", "right", "up", "down")
-	
-	var break_bonus = 1
-	if (are_oposite_vectors(direction, momentum)):
-		break_bonus = BREAK_BONUS
-		print("BREAAAAAAAAK")
-	else:
-		print(" ")
-	
-	momentum += direction * delta * ACCELERATION * break_bonus
-	
-	if momentum.length() > 1.0:
-		momentum = momentum.normalized()
-	if direction.length() == 0:
-		momentum -= momentum * RESISTANCE * delta
+		velocity = momentum * MAX_SPEED
 
-	velocity = momentum * 400
-	move_and_slide()
+func on_knockback():
+	in_knockback = true
+	%KnockbackTimer.start()
+	get_node("Sprite2D/ColorRect2").visible = true
+
+func _on_knockback_timer_timeout():
+	in_knockback = false
+	get_node("Sprite2D/ColorRect2").visible = false
