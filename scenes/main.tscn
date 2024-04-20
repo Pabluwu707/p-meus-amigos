@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://bqdrt7oox6d1c" path="res://scenes/asteroid_hazard.tscn" id="3_q55hx"]
 [ext_resource type="PackedScene" uid="uid://b4gt7stkwumbt" path="res://scenes/comet_spawner.tscn" id="4_yl4ql"]
 
-
 [node name="Main" type="Node"]
 
 [node name="Planet" parent="." instance=ExtResource("2_c05fd")]

@@ -1,4 +1,3 @@
-
 [gd_scene load_steps=4 format=3 uid="uid://d4c6g7vef6drt"]
 
 [ext_resource type="Script" path="res://scripts/CometHazard.gd" id="1_wknsu"]
@@ -7,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_x628k"]
 radius = 27.074
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CometHazard" type="CharacterBody2D"]
 collision_mask = 0
 script = ExtResource("1_wknsu")
 
