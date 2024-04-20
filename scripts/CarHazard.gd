@@ -1,6 +1,6 @@
-extends CharacterBody2D
+extends RigidBody2D
 
-const SPEED = 1000
+const SPEED = 1500
 var direction = Vector2.LEFT
 
 func _ready():
@@ -10,7 +10,3 @@ func _ready():
 func _physics_process(delta):
 	#move_and_collide(direction*SPEED)
 	var collide_info = move_and_collide(direction*SPEED*delta)
-	
-	if (collide_info):
-		print("ayyyyyyy")
-		set_collision_layer_value(2, false)

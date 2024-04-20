@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://c73ikc3e33k2n"]
+
+[ext_resource type="Script" path="res://scripts/warning_sign.gd" id="1_hipfs"]
+[ext_resource type="Texture2D" uid="uid://cdtbmo4d1d16b" path="res://borrar5.png" id="1_qsick"]
+
+[node name="WarningSign" type="Node2D"]
+script = ExtResource("1_hipfs")
+
+[node name="Sign" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-2.38419e-07, 1.19209e-07)
+scale = Vector2(0.231771, 0.231771)
+texture = ExtResource("1_qsick")
+
+[node name="Flicker" type="Timer" parent="."]
+wait_time = 0.7
+autostart = true
+
+[node name="SpawnTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 2.7
+one_shot = true
+
+[connection signal="timeout" from="Flicker" to="." method="_on_flicker_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

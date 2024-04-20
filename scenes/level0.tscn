@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbvqpcrnor35v"]
+[gd_scene load_steps=10 format=3 uid="uid://bbvqpcrnor35v"]
 
 [ext_resource type="PackedScene" uid="uid://0rthx7bvralu" path="res://scenes/player.tscn" id="1_c5cja"]
 [ext_resource type="Script" path="res://scripts/Level0.gd" id="1_uggbf"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://cdxwedukr5yl" path="res://scenes/level_controller.tscn" id="2_sidqs"]
 [ext_resource type="PackedScene" uid="uid://p2sud2l3qm5l" path="res://scenes/camera_2d.tscn" id="4_w7exc"]
 [ext_resource type="PackedScene" uid="uid://cdt2egiu025pg" path="res://scenes/ui.tscn" id="5_7t4hg"]
+[ext_resource type="PackedScene" uid="uid://c35nl45fuxt6a" path="res://scenes/car_spawner.tscn" id="7_jono8"]
+[ext_resource type="PackedScene" uid="uid://ba62prgnkj1lw" path="res://scenes/planet.tscn" id="8_cbiy8"]
+[ext_resource type="PackedScene" uid="uid://bqdrt7oox6d1c" path="res://scenes/asteroid_hazard.tscn" id="9_4eunf"]
 
 [node name="Level0" type="Node2D"]
 script = ExtResource("1_uggbf")
@@ -35,3 +38,12 @@ position = Vector2(1162, 422)
 position = Vector2(256, 339)
 
 [node name="Hazards" type="Node2D" parent="."]
+
+[node name="CarSpawner" parent="." instance=ExtResource("7_jono8")]
+position = Vector2(448, -4)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("8_cbiy8")]
+position = Vector2(674, 836)
+
+[node name="AsteroidHazard" parent="." instance=ExtResource("9_4eunf")]
+position = Vector2(602, 274)
