@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d4c6g7vef6drt"]
 
-[ext_resource type="Texture2D" uid="uid://cm4uuf6sffdg2" path="res://borrar3.png" id="2_w26ie"]
+[ext_resource type="Texture2D" path="res://borrar3.png" id="2_w26ie"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x628k"]
 radius = 27.074
