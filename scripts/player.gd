@@ -3,12 +3,12 @@ extends CharacterBody2D
 const MAX_SPEED = 7.5
 const ACCELERATION = 2.0
 const RESISTANCE = 2.0
-const BREAK_BONUS = 2.0
+const BREAK_BONUS = 10.0
 const GRACE_PERIOD = 3.0 #in seconds
 
 var momentum = Vector2(0, 0)
-var bouncing = false
 var in_knockback = false
+var invencible = false
 var playable = true
 
 func are_oposite_numbers(n1: float, n2: float):
@@ -31,7 +31,6 @@ func _physics_process(delta):
 	if collision_info:
 		velocity = velocity.bounce(collision_info.get_normal())
 		momentum = momentum.rotated(momentum.angle_to(velocity)) * 0.7
-		bouncing = true
 		on_knockback()
 		
 	elif playable:
@@ -40,11 +39,8 @@ func _physics_process(delta):
 		if (in_knockback):
 			direction = Vector2(0, 0)
 		
-		if direction.length() != 0:
-			bouncing = false
-		
 		var break_bonus = 1
-		if (are_oposite_vectors(direction, velocity) and !bouncing):
+		if are_oposite_vectors(direction, velocity):
 			break_bonus = BREAK_BONUS
 			print("BREAAAAAAAAK")
 		else:
@@ -61,10 +57,17 @@ func _physics_process(delta):
 		velocity = momentum * MAX_SPEED
 
 func on_knockback():
+	if (!invencible):
+		%GracePeriodTimer.start()
+		invencible = true
+		get_node("Sprite2D/ColorRect2").visible = true
+		
 	in_knockback = true
 	%KnockbackTimer.start()
-	get_node("Sprite2D/ColorRect2").visible = true
 
 func _on_knockback_timer_timeout():
 	in_knockback = false
+
+func _on_grace_period_timer_timeout():
+	invencible = false
 	get_node("Sprite2D/ColorRect2").visible = false
