@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://blogo65muktlv"]
+
+[ext_resource type="PackedScene" uid="uid://0rthx7bvralu" path="res://scenes/player.tscn" id="1_hjxq3"]
+[ext_resource type="PackedScene" path="res://scenes/planet.tscn" id="2_c05fd"]
+[ext_resource type="PackedScene" path="res://scenes/asteroid_hazard.tscn" id="3_q55hx"]
+
+[node name="Main" type="Node"]
+
+[node name="Planet" parent="." instance=ExtResource("2_c05fd")]
+position = Vector2(543, 283)
+
+[node name="Player" parent="." instance=ExtResource("1_hjxq3")]
+
+[node name="AsteroidHazard" parent="." instance=ExtResource("3_q55hx")]
+position = Vector2(256, 131)
+
+[node name="AsteroidHazard2" parent="." instance=ExtResource("3_q55hx")]
+position = Vector2(910, 131)
+
+[node name="AsteroidHazard3" parent="." instance=ExtResource("3_q55hx")]
+position = Vector2(127, 491)
+
+[node name="AsteroidHazard4" parent="." instance=ExtResource("3_q55hx")]
+position = Vector2(754, 548)

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqdrt7oox6d1c"]
+
+[ext_resource type="Texture2D" path="res://borrar2.png" id="1_r18wq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iewyh"]
+radius = 27.0
+
+[node name="AsteroidHazard" type="StaticBody2D"]
+
+[node name="Borrar2" type="Sprite2D" parent="."]
+position = Vector2(3.8147e-06, 4)
+scale = Vector2(0.0833334, 0.0833334)
+texture = ExtResource("1_r18wq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_iewyh")

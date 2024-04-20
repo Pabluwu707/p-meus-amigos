@@ -1,7 +1,9 @@
 extends Node2D
 
-@export var VidaCounter : TextEdit
-@export var MoneyCounter : TextEdit
+#@export var VidaCounter : TextEdit
+#@export var MoneyCounter : TextEdit
+@onready var VidaCounter := $VidaDisplay
+@onready var MoneyCounter := $DineroDisplay
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

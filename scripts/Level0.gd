@@ -1,6 +1,6 @@
 extends Node
 
-@onready var game_controller := $GameController
+@onready var game_controller := $LevelController
 @onready var player := $Player
 @onready var player_camera := $Player/Camera2D
 @onready var ui := $CanvasLayer/UI
