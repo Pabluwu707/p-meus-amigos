@@ -1,10 +1,3 @@
-[gd_scene load_steps=2 format=3 uid="uid://blogo65muktlv"]
-
-[ext_resource type="Texture2D" uid="uid://djkmt133u7oqi" path="res://amigo-momento.jpg" id="1_fu4w2"]
+[gd_scene format=3 uid="uid://blogo65muktlv"]
 
 [node name="Main" type="Node"]
-
-[node name="Amigo-momento" type="Sprite2D" parent="."]
-position = Vector2(555, 327)
-scale = Vector2(1.11968, 0.859584)
-texture = ExtResource("1_fu4w2")

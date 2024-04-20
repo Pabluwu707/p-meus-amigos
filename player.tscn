@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4v38y0ng5nit"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_oj8b2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_orot5"]
+radius = 8.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_oj8b2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D"]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_orot5")
