@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=4 format=3 uid="uid://d4c6g7vef6drt"]
 
 [ext_resource type="Script" path="res://scripts/CometHazard.gd" id="1_wknsu"]
