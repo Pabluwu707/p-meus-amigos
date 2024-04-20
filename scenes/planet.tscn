@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba62prgnkj1lw"]
+
+[ext_resource type="Texture2D" uid="uid://bkygpofersocq" path="res://BORRAR.png" id="1_wdtll"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fas5y"]
+radius = 160.112
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Borrar" type="Sprite2D" parent="."]
+scale = Vector2(0.337891, 0.337891)
+texture = ExtResource("1_wdtll")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fas5y")
