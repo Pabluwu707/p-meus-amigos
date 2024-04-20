@@ -6,6 +6,8 @@
 radius = 160.112
 
 [node name="StaticBody2D" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
 
 [node name="Borrar" type="Sprite2D" parent="."]
 scale = Vector2(0.337891, 0.337891)
