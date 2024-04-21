@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var VidaCounter := $VidaDisplay
+@onready var VidaCounter := $VidaDisplay/VidaDisplayTexto
 @onready var MoneyCounter := $DineroDisplay
 @onready var DistanciaCounter := $DistanciaDisplay/ProgressBar
 

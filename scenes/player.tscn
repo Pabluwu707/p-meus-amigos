@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_0y6ha"]
 [ext_resource type="Shader" path="res://shaders/boiling-shader.gdshader" id="1_rshh2"]
-[ext_resource type="Texture2D" uid="uid://7008pf0b315p" path="res://scenes/Repartidor.png" id="2_e3v2r"]
+[ext_resource type="Texture2D" uid="uid://7008pf0b315p" path="res://assets/Repartidor.png" id="2_e3v2r"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_wfh3b"]
 
@@ -18,8 +18,8 @@ shader_parameter/noise_texture = SubResource("NoiseTexture2D_3ptjr")
 [sub_resource type="CircleShape2D" id="CircleShape2D_orot5"]
 radius = 16.0
 
-[sub_resource type="Animation" id="Animation_ww48i"]
-length = 0.5
+[sub_resource type="Animation" id="Animation_d80ns"]
+length = 0.25
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -40,38 +40,10 @@ tracks/1/path = NodePath("Sprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = false
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.25),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 1]
-}
-
-[sub_resource type="Animation" id="Animation_8mgfg"]
-length = 0.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = false
-tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = false
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.25),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [2, 3]
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_tbhjb"]
@@ -102,8 +74,8 @@ tracks/1/keys = {
 "values": [4, 5]
 }
 
-[sub_resource type="Animation" id="Animation_d80ns"]
-length = 0.25
+[sub_resource type="Animation" id="Animation_8mgfg"]
+length = 0.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -124,10 +96,38 @@ tracks/1/path = NodePath("Sprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = false
 tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_ww48i"]
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o36g1"]
@@ -223,7 +223,6 @@ material = SubResource("ShaderMaterial_787qi")
 texture = ExtResource("2_e3v2r")
 hframes = 3
 vframes = 2
-frame = 4
 metadata/_aseprite_wizard_config_ = {
 "i_mode": -1,
 "keep_anim_length": false,

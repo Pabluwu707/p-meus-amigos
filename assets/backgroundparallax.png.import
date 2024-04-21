@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7008pf0b315p"
-path="res://.godot/imported/Repartidor.png-a79f0aa37a9ce12ee3aa905c0ca763c3.ctex"
+uid="uid://dl6v34dc03ff1"
+path="res://.godot/imported/backgroundparallax.png-45d230da32f85fe18ef3e572ae7207d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Repartidor.png"
-dest_files=["res://.godot/imported/Repartidor.png-a79f0aa37a9ce12ee3aa905c0ca763c3.ctex"]
+source_file="res://assets/backgroundparallax.png"
+dest_files=["res://.godot/imported/backgroundparallax.png-45d230da32f85fe18ef3e572ae7207d1.ctex"]
 
 [params]
 
