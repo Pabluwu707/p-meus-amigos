@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://0rthx7bvralu" path="res://scenes/player.tscn" id="3_cc815"]
 [ext_resource type="PackedScene" uid="uid://p2sud2l3qm5l" path="res://scenes/camera_2d.tscn" id="4_pdssf"]
 [ext_resource type="PackedScene" uid="uid://cdt2egiu025pg" path="res://scenes/ui.tscn" id="5_8ge7v"]
-[ext_resource type="Texture2D" uid="uid://bkygpofersocq" path="res://BORRAR.png" id="6_1jmei"]
+[ext_resource type="Texture2D" uid="uid://bs4p0dnopwb7l" path="res://scenes/planeta dia 4.png" id="6_xg76e"]
 [ext_resource type="PackedScene" path="res://scenes/fondo_parallax.tscn" id="7_1sjlf"]
 [ext_resource type="PackedScene" uid="uid://ba62prgnkj1lw" path="res://scenes/planet.tscn" id="8_07656"]
 [ext_resource type="PackedScene" uid="uid://c7p6mvhmvioke" path="res://scenes/cow_spawner.tscn" id="9_u2hvb"]
@@ -48,11 +48,24 @@ position = Vector2(10494, 479)
 position = Vector2(-5, -4.5)
 shape = SubResource("RectangleShape2D_4ux5u")
 
-[node name="Sprite2D" type="Sprite2D" parent="Meta"]
-z_index = -1
-position = Vector2(291, 260)
-scale = Vector2(0.46582, 0.46582)
-texture = ExtResource("6_1jmei")
+[node name="Sprite2D2" type="Sprite2D" parent="Meta"]
+texture_filter = 1
+texture = ExtResource("6_xg76e")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "",
+"slice": "",
+"source": "res://aseprite/planeta dia 4.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true
+}
 
 [node name="Fondo Parallax" parent="." instance=ExtResource("7_1sjlf")]
 

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://0rthx7bvralu" path="res://scenes/player.tscn" id="3_gr72h"]
 [ext_resource type="PackedScene" uid="uid://p2sud2l3qm5l" path="res://scenes/camera_2d.tscn" id="4_5d0xm"]
 [ext_resource type="PackedScene" uid="uid://cdt2egiu025pg" path="res://scenes/ui.tscn" id="5_lu7s8"]
-[ext_resource type="Texture2D" uid="uid://bkygpofersocq" path="res://BORRAR.png" id="6_7lcbe"]
+[ext_resource type="Texture2D" uid="uid://c1errg1a3htln" path="res://scenes/planeta dia 3.png" id="6_3d1p8"]
 [ext_resource type="PackedScene" path="res://scenes/fondo_parallax.tscn" id="7_gmamn"]
 [ext_resource type="PackedScene" uid="uid://n7l4210ok7a3" path="res://scenes/asteroid_small_hazard.tscn" id="8_p87of"]
 [ext_resource type="PackedScene" uid="uid://du5ko2cpsk1dp" path="res://scenes/ovni_spawner.tscn" id="9_88car"]
@@ -48,11 +48,24 @@ position = Vector2(10494, 479)
 position = Vector2(-5, -4.5)
 shape = SubResource("RectangleShape2D_4ux5u")
 
-[node name="Sprite2D" type="Sprite2D" parent="Meta"]
-z_index = -1
-position = Vector2(291, 260)
-scale = Vector2(0.46582, 0.46582)
-texture = ExtResource("6_7lcbe")
+[node name="Sprite2D2" type="Sprite2D" parent="Meta"]
+texture_filter = 1
+texture = ExtResource("6_3d1p8")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "",
+"slice": "",
+"source": "res://aseprite/planeta dia 3.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false
+}
 
 [node name="Fondo Parallax" parent="." instance=ExtResource("7_gmamn")]
 

@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://0rthx7bvralu" path="res://scenes/player.tscn" id="2_k1qyv"]
 [ext_resource type="PackedScene" uid="uid://p2sud2l3qm5l" path="res://scenes/camera_2d.tscn" id="3_5me2t"]
 [ext_resource type="PackedScene" uid="uid://cdt2egiu025pg" path="res://scenes/ui.tscn" id="4_n6avi"]
-[ext_resource type="Texture2D" uid="uid://bkygpofersocq" path="res://BORRAR.png" id="5_vdw2q"]
 [ext_resource type="PackedScene" path="res://scenes/fondo_parallax.tscn" id="6_c4avk"]
+[ext_resource type="Texture2D" uid="uid://de25b7di0n6vj" path="res://scenes/planeta dia 1.png" id="6_y8rqf"]
 [ext_resource type="PackedScene" uid="uid://n7l4210ok7a3" path="res://scenes/asteroid_small_hazard.tscn" id="8_eg5sl"]
 [ext_resource type="PackedScene" uid="uid://ba62prgnkj1lw" path="res://scenes/planet.tscn" id="9_d2irk"]
 [ext_resource type="PackedScene" uid="uid://b4gt7stkwumbt" path="res://scenes/comet_spawner.tscn" id="10_drim8"]
@@ -46,11 +46,25 @@ position = Vector2(10494, 479)
 position = Vector2(-5, -4.5)
 shape = SubResource("RectangleShape2D_4ux5u")
 
-[node name="Sprite2D" type="Sprite2D" parent="Meta"]
-z_index = -1
-position = Vector2(291, 260)
-scale = Vector2(0.46582, 0.46582)
-texture = ExtResource("5_vdw2q")
+[node name="Sprite2D2" type="Sprite2D" parent="Meta"]
+texture_filter = 1
+texture = ExtResource("6_y8rqf")
+metadata/_aseprite_wizard_interface_config_ = {
+"animation_section": true,
+"layer_section": false
+}
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "",
+"slice": "",
+"source": "res://aseprite/planeta dia 1.aseprite"
+}
 
 [node name="Fondo Parallax" parent="." instance=ExtResource("6_c4avk")]
 
