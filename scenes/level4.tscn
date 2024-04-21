@@ -1,0 +1,126 @@
+[gd_scene load_steps=16 format=3 uid="uid://bkaybs2xedlkv"]
+
+[ext_resource type="Script" path="res://scripts/Level0.gd" id="1_y2jni"]
+[ext_resource type="PackedScene" uid="uid://cdxwedukr5yl" path="res://scenes/level_controller.tscn" id="2_aovfx"]
+[ext_resource type="PackedScene" uid="uid://0rthx7bvralu" path="res://scenes/player.tscn" id="3_cc815"]
+[ext_resource type="PackedScene" uid="uid://p2sud2l3qm5l" path="res://scenes/camera_2d.tscn" id="4_pdssf"]
+[ext_resource type="PackedScene" uid="uid://cdt2egiu025pg" path="res://scenes/ui.tscn" id="5_8ge7v"]
+[ext_resource type="Texture2D" uid="uid://bkygpofersocq" path="res://BORRAR.png" id="6_1jmei"]
+[ext_resource type="PackedScene" path="res://scenes/fondo_parallax.tscn" id="7_1sjlf"]
+[ext_resource type="PackedScene" uid="uid://ba62prgnkj1lw" path="res://scenes/planet.tscn" id="8_07656"]
+[ext_resource type="PackedScene" uid="uid://c7p6mvhmvioke" path="res://scenes/cow_spawner.tscn" id="9_u2hvb"]
+[ext_resource type="PackedScene" uid="uid://n7l4210ok7a3" path="res://scenes/asteroid_small_hazard.tscn" id="10_6b3r5"]
+[ext_resource type="PackedScene" uid="uid://bqdrt7oox6d1c" path="res://scenes/asteroid_hazard.tscn" id="11_mwx1t"]
+[ext_resource type="PackedScene" uid="uid://c35nl45fuxt6a" path="res://scenes/car_spawner.tscn" id="12_sp8tj"]
+[ext_resource type="PackedScene" uid="uid://b4gt7stkwumbt" path="res://scenes/comet_spawner.tscn" id="13_mf1ad"]
+[ext_resource type="PackedScene" uid="uid://du5ko2cpsk1dp" path="res://scenes/ovni_spawner.tscn" id="14_looxx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ux5u"]
+size = Vector2(164, 1029)
+
+[node name="LevelBase" type="Node2D"]
+script = ExtResource("1_y2jni")
+
+[node name="LevelController" parent="." instance=ExtResource("2_aovfx")]
+
+[node name="Player" parent="." instance=ExtResource("3_cc815")]
+position = Vector2(333, 413)
+
+[node name="Camera2D" parent="Player" node_paths=PackedStringArray("PlayerNode") instance=ExtResource("4_pdssf")]
+PlayerNode = NodePath("..")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" node_paths=PackedStringArray("Player", "Meta") instance=ExtResource("5_8ge7v")]
+Player = NodePath("../../Player")
+Meta = NodePath("../../Meta")
+
+[node name="Hazards" type="Node2D" parent="."]
+
+[node name="Meta" type="Node2D" parent="."]
+position = Vector2(10494, 479)
+
+[node name="Area2D" type="Area2D" parent="Meta"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Meta/Area2D"]
+position = Vector2(-5, -4.5)
+shape = SubResource("RectangleShape2D_4ux5u")
+
+[node name="Sprite2D" type="Sprite2D" parent="Meta"]
+z_index = -1
+position = Vector2(291, 260)
+scale = Vector2(0.46582, 0.46582)
+texture = ExtResource("6_1jmei")
+
+[node name="Fondo Parallax" parent="." instance=ExtResource("7_1sjlf")]
+
+[node name="Planet" parent="." instance=ExtResource("8_07656")]
+position = Vector2(969, 935)
+rotation = -2.00932
+
+[node name="Planet2" parent="." instance=ExtResource("8_07656")]
+position = Vector2(3914, 944)
+rotation = -2.00932
+
+[node name="Planet3" parent="." instance=ExtResource("8_07656")]
+position = Vector2(4911, 99.9999)
+rotation = -2.75184
+
+[node name="Planet4" parent="." instance=ExtResource("8_07656")]
+position = Vector2(5279, 1321)
+rotation = -0.785095
+
+[node name="Planet5" parent="." instance=ExtResource("8_07656")]
+position = Vector2(6114, 261)
+rotation = -1.51311
+
+[node name="Planet6" parent="." instance=ExtResource("8_07656")]
+position = Vector2(6895, 1240)
+rotation = -2.00932
+
+[node name="CowSpawner" parent="." instance=ExtResource("9_u2hvb")]
+position = Vector2(596, 6)
+
+[node name="AsteroidHazard" parent="." instance=ExtResource("10_6b3r5")]
+position = Vector2(788, 104)
+
+[node name="AsteroidHazard5" parent="." instance=ExtResource("10_6b3r5")]
+position = Vector2(5538, 636)
+
+[node name="AsteroidHazard2" parent="." instance=ExtResource("11_mwx1t")]
+position = Vector2(1696, 280)
+
+[node name="AsteroidHazard3" parent="." instance=ExtResource("11_mwx1t")]
+position = Vector2(2168, 740)
+
+[node name="AsteroidHazard6" parent="." instance=ExtResource("11_mwx1t")]
+position = Vector2(8233, 298)
+
+[node name="AsteroidHazard7" parent="." instance=ExtResource("11_mwx1t")]
+position = Vector2(9024, 733)
+
+[node name="AsteroidHazard4" parent="." instance=ExtResource("11_mwx1t")]
+position = Vector2(2904, 204)
+
+[node name="CarSpawner" parent="." instance=ExtResource("12_sp8tj")]
+position = Vector2(1672, 0)
+
+[node name="CometSpawner" parent="." instance=ExtResource("13_mf1ad")]
+position = Vector2(2583, 371)
+
+[node name="CometSpawner2" parent="." instance=ExtResource("13_mf1ad")]
+position = Vector2(2754, 361)
+
+[node name="CometSpawner3" parent="." instance=ExtResource("13_mf1ad")]
+position = Vector2(2925, 371)
+
+[node name="CometSpawner4" parent="." instance=ExtResource("13_mf1ad")]
+position = Vector2(3087, 361)
+
+[node name="OvniSpawner" parent="." instance=ExtResource("14_looxx")]
+position = Vector2(6924, 23)
+
+[node name="OvniSpawner2" parent="." instance=ExtResource("14_looxx")]
+position = Vector2(9198, 9)
+
+[connection signal="body_entered" from="Meta/Area2D" to="Player" method="_on_area_2d_body_entered"]
