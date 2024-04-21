@@ -1,10 +1,28 @@
-[gd_scene load_steps=8 format=3 uid="uid://cdt2egiu025pg"]
+[gd_scene load_steps=20 format=3 uid="uid://cdt2egiu025pg"]
 
 [ext_resource type="Script" path="res://scripts/UI.gd" id="1_uje1x"]
-[ext_resource type="Script" path="res://scripts/VidaDisplay.gd" id="2_6joc8"]
 [ext_resource type="Script" path="res://scripts/DineroDisplay.gd" id="3_ik1ct"]
+[ext_resource type="Script" path="res://scenes/DistanciaDisplay.gd" id="3_xdrc4"]
+[ext_resource type="Script" path="res://scenes/VidaDisplay.gd" id="4_btv3b"]
 [ext_resource type="Script" path="res://scripts/ProgressBar.gd" id="4_eflye"]
 [ext_resource type="Texture2D" uid="uid://bd0v20od5xv3y" path="res://scenes/vida-ui.png" id="4_ier6f"]
+[ext_resource type="Texture2D" uid="uid://bx50nvlh4r08k" path="res://scenes/BARRA.png" id="5_ymq6j"]
+[ext_resource type="Texture2D" uid="uid://cox4fkgw5wi6j" path="res://scenes/banderin_distancia.png" id="6_085ma"]
+[ext_resource type="Script" path="res://scripts/VidaDisplayTexto.gd" id="6_aexmu"]
+[ext_resource type="Texture2D" uid="uid://sv0yamrtlo35" path="res://scenes/dolly_distancia.png" id="7_v5hyg"]
+[ext_resource type="Texture2D" uid="uid://dscnfrpyce7ni" path="res://scenes/contador_dinero.png" id="10_0qr4e"]
+[ext_resource type="FontFile" uid="uid://bgl1s21hnm7pb" path="res://assets/PressStart2P-Regular.ttf" id="11_xh4k4"]
+
+[sub_resource type="Theme" id="Theme_bro2i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ojynk"]
+bg_color = Color(0.996078, 0.54902, 0, 0.666667)
+
+[sub_resource type="Curve2D" id="Curve2D_hopmf"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 264, 904, 0, 0, 0, 0, 984, 904)
+}
+point_count = 2
 
 [sub_resource type="Animation" id="Animation_2uv0q"]
 length = 0.9
@@ -39,27 +57,101 @@ _data = {
 "default": SubResource("Animation_2uv0q")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vpxpg"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cej30"]
+bg_color = Color(0.415686, 0.690196, 0, 1)
+
 [node name="UI" type="Node2D"]
 script = ExtResource("1_uje1x")
 
-[node name="DineroDisplay" type="TextEdit" parent="."]
-offset_left = 952.0
-offset_top = 32.0
-offset_right = 1182.0
-offset_bottom = 95.0
-text = "DINERO"
-script = ExtResource("3_ik1ct")
-
 [node name="DistanciaDisplay" type="Node2D" parent="."]
+script = ExtResource("3_xdrc4")
 
 [node name="ProgressBar" type="ProgressBar" parent="DistanciaDisplay"]
-offset_left = 456.0
-offset_top = 888.0
-offset_right = 823.0
-offset_bottom = 915.0
+offset_left = 264.0
+offset_top = 892.0
+offset_right = 981.0
+offset_bottom = 912.0
+theme = SubResource("Theme_bro2i")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ojynk")
+show_percentage = false
 script = ExtResource("4_eflye")
 
+[node name="Polo" type="Node2D" parent="DistanciaDisplay"]
+
+[node name="Marco de barra" type="Sprite2D" parent="DistanciaDisplay/Polo"]
+texture_filter = 1
+position = Vector2(640, 528)
+texture = ExtResource("5_ymq6j")
+hframes = 2
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "DistanciaDisplay/Polo/AnimationPlayer",
+"slice": "",
+"source": "res://aseprite/BARRA.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true
+}
+
+[node name="Banderín" type="Sprite2D" parent="DistanciaDisplay/Polo"]
+texture_filter = 1
+position = Vector2(624, 544)
+texture = ExtResource("6_085ma")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "",
+"slice": "",
+"source": "res://aseprite/banderin_distancia.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true
+}
+
+[node name="Path2D" type="Path2D" parent="DistanciaDisplay"]
+curve = SubResource("Curve2D_hopmf")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="DistanciaDisplay/Path2D"]
+unique_name_in_owner = true
+position = Vector2(264, 904)
+
+[node name="Cabeza" type="Sprite2D" parent="DistanciaDisplay/Path2D/PathFollow2D"]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(342, -375)
+texture = ExtResource("7_v5hyg")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "",
+"slice": "",
+"source": "res://aseprite/dolly_distancia.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true
+}
+
 [node name="VidaDisplay" type="Node2D" parent="."]
+script = ExtResource("4_btv3b")
 
 [node name="Marco" type="Node2D" parent="VidaDisplay"]
 position = Vector2(298, 120)
@@ -91,9 +183,60 @@ libraries = {
 autoplay = "default"
 
 [node name="VidaDisplayTexto" type="TextEdit" parent="VidaDisplay"]
+visible = false
 offset_left = 200.0
-offset_top = 75.0
+offset_top = 160.0
 offset_right = 430.0
-offset_bottom = 140.0
+offset_bottom = 225.0
 text = "VIDA"
-script = ExtResource("2_6joc8")
+script = ExtResource("6_aexmu")
+
+[node name="DineroDisplay" type="Node2D" parent="."]
+
+[node name="FondoDinero" type="Sprite2D" parent="DineroDisplay"]
+texture_filter = 1
+position = Vector2(1133, 95)
+texture = ExtResource("10_0qr4e")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "",
+"slice": "",
+"source": "res://aseprite/contador_dinero.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true
+}
+
+[node name="Basura" type="TextEdit" parent="DineroDisplay"]
+visible = false
+offset_left = 1062.0
+offset_top = 79.0
+offset_right = 1158.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_xh4k4")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_vpxpg")
+theme_override_styles/focus = SubResource("StyleBoxFlat_cej30")
+text = "001"
+editable = false
+
+[node name="DineroDisplayTexto" type="Label" parent="DineroDisplay"]
+offset_left = 1065.0
+offset_top = 73.0
+offset_right = 1257.0
+offset_bottom = 132.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_xh4k4")
+theme_override_font_sizes/font_size = 26
+text = "001"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_ik1ct")

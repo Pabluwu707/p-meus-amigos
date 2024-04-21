@@ -1,7 +1,8 @@
 extends Node2D
 
-@onready var VidaCounter := $VidaDisplay/VidaDisplayTexto
-@onready var MoneyCounter := $DineroDisplay
+@onready var VidaCounter := $VidaDisplay
+@onready var VidaCounterDebug := $VidaDisplay/VidaDisplayTexto
+@onready var MoneyCounter := $DineroDisplay/DineroDisplayTexto
 @onready var DistanciaCounter := $DistanciaDisplay/ProgressBar
 
 @export var Player : CharacterBody2D
@@ -13,9 +14,11 @@ func _ready():
 
 func setup_ui(maxlife, currentmoney, intialposition):
 	VidaCounter.setup_vida(maxlife)
+	#VidaCounterDebug.setup_vida(maxlife)
 	MoneyCounter.setup_dinero(currentmoney)
 	DistanciaCounter.setup_distancia(Player, Meta, intialposition)
 	
 
 func change_vida(value):
 	VidaCounter.change_vida(value)
+	#VidaCounterDebug.change_vida(value)
