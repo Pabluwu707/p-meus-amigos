@@ -91,9 +91,11 @@ position = Vector2(888, 673)
 
 [node name="Planet" parent="." instance=ExtResource("10_vejue")]
 position = Vector2(3151, 60)
+rotation = 2.41269
 
 [node name="Planet2" parent="." instance=ExtResource("10_vejue")]
 position = Vector2(6093, 1034)
+rotation = -1.88032
 
 [node name="CometSpawner" parent="." instance=ExtResource("11_phbya")]
 position = Vector2(2526, 381)
