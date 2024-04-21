@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bbvqpcrnor35v"]
+[gd_scene load_steps=11 format=3 uid="uid://bbvqpcrnor35v"]
 
 [ext_resource type="PackedScene" uid="uid://0rthx7bvralu" path="res://scenes/player.tscn" id="1_c5cja"]
 [ext_resource type="Script" path="res://scripts/Level0.gd" id="1_uggbf"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://covfs4itgi7x8" path="res://scenes/car_spawner.tscn" id="7_jono8"]
 [ext_resource type="PackedScene" uid="uid://ba62prgnkj1lw" path="res://scenes/planet.tscn" id="8_cbiy8"]
 [ext_resource type="PackedScene" uid="uid://bqdrt7oox6d1c" path="res://scenes/asteroid_hazard.tscn" id="9_4eunf"]
+[ext_resource type="PackedScene" uid="uid://c7p6mvhmvioke" path="res://scenes/cow_spawner.tscn" id="10_343ea"]
 
 [node name="Level0" type="Node2D"]
 script = ExtResource("1_uggbf")
@@ -39,11 +40,14 @@ position = Vector2(256, 339)
 
 [node name="Hazards" type="Node2D" parent="."]
 
-[node name="CarSpawner" parent="." instance=ExtResource("7_jono8")]
-position = Vector2(448, -4)
-
 [node name="StaticBody2D" parent="." instance=ExtResource("8_cbiy8")]
 position = Vector2(674, 836)
 
 [node name="AsteroidHazard" parent="." instance=ExtResource("9_4eunf")]
 position = Vector2(602, 274)
+
+[node name="CowSpawner" parent="." instance=ExtResource("10_343ea")]
+position = Vector2(-581, 2)
+
+[node name="CarSpawner" parent="." instance=ExtResource("7_jono8")]
+position = Vector2(671, -2)

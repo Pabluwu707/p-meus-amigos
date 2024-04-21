@@ -4,9 +4,6 @@ var running = true
 
 func _ready():
 	%SpawnTimer.start()
-	
-func _process(delta):
-	print(global_position)
 
 func spawn_car():
 	var car = preload("res://scenes/car_hazard.tscn").instantiate()
