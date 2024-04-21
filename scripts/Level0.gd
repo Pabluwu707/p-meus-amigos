@@ -5,11 +5,13 @@ extends Node
 @onready var player_camera := $Player/Camera2D
 @onready var ui := $CanvasLayer/UI
 
+var global = Global
+
 # Start the game
 func _ready():
 	print("COMIENZA")
-	game_controller.setup_level(5,100)
-	ui.setup_ui(5, 100, player.get_position().x)
+	game_controller.setup_level(Global.current_max_vida,Global.current_dinero)
+	ui.setup_ui(Global.current_max_vida,Global.current_dinero, player.get_position().x)
 	_connect_player_damage()
 
 

@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx36ueqnr5sys"]
+
+[ext_resource type="Script" path="res://scenes/boton_dificil.gd" id="1_ywa1s"]
+[ext_resource type="Texture2D" uid="uid://cj35r4n15x4vv" path="res://scenes/misiones_casilla_dificil.png" id="2_8i71q"]
+[ext_resource type="FontFile" uid="uid://bgl1s21hnm7pb" path="res://assets/PressStart2P-Regular.ttf" id="3_rtcyx"]
+
+[node name="BotonDificil" type="Node2D"]
+script = ExtResource("1_ywa1s")
+
+[node name="Base" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(640, 480)
+texture = ExtResource("2_8i71q")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "",
+"slice": "",
+"source": "res://aseprite/misiones_casilla_dificil.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true
+}
+
+[node name="NombreAlien" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 622.0
+offset_top = 748.0
+offset_right = 889.0
+offset_bottom = 775.0
+theme_override_fonts/font = ExtResource("3_rtcyx")
+text = "NOMBRE DEL ALIEN"
+vertical_alignment = 1
+
+[node name="NombrePaquete" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 622.0
+offset_top = 779.0
+offset_right = 943.0
+offset_bottom = 807.0
+theme_override_fonts/font = ExtResource("3_rtcyx")
+text = "NOMBRE DEL PAQUETE"
+vertical_alignment = 1
+
+[node name="ImagenPaquete" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 406)
+
+[node name="Dificultad" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 737.0
+offset_top = 831.0
+offset_right = 961.0
+offset_bottom = 854.0
+theme_override_fonts/font = ExtResource("3_rtcyx")
+text = "ROBUSTO(♥♥♥♥♥)"
+
+[node name="Recompensa" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 823.0
+offset_top = 862.0
+offset_right = 911.0
+offset_bottom = 885.0
+theme_override_fonts/font = ExtResource("3_rtcyx")
+text = "999"
+horizontal_alignment = 1
+vertical_alignment = 1
