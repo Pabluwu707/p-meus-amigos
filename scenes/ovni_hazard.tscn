@@ -1,13 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://d4c6g7vef6drt"]
+[gd_scene load_steps=7 format=3 uid="uid://mj0ospejq8e2"]
 
-[ext_resource type="Script" path="res://scripts/CometHazard.gd" id="1_wknsu"]
-[ext_resource type="Texture2D" uid="uid://ihunvu604l3w" path="res://scenes/cometa.png" id="2_0bfn5"]
+[ext_resource type="Texture2D" uid="uid://cfj1ujy4b2esi" path="res://scenes/ovni_final.png" id="1_c73wk"]
+[ext_resource type="Script" path="res://scripts/ovni_hazard.gd" id="1_houlf"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_x628k"]
-radius = 62.0322
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hf5ga"]
+radius = 61.0
+height = 350.0
 
-[sub_resource type="Animation" id="Animation_2km4n"]
-length = 0.2
+[sub_resource type="Animation" id="Animation_nwvy4"]
+length = 0.9
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -28,28 +29,30 @@ tracks/1/path = NodePath("Sprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = false
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1),
+"times": PackedFloat32Array(0, 0.45),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 1]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_8fdrv"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fewk8"]
 _data = {
-"default": SubResource("Animation_2km4n")
+"default": SubResource("Animation_nwvy4")
 }
 
-[node name="CometHazard" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_b0kgj"]
+radius = 69.029
+
+[node name="OvniHazard" type="StaticBody2D"]
 collision_layer = 2
 collision_mask = 0
-script = ExtResource("1_wknsu")
+script = ExtResource("1_houlf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-6, -121)
-rotation = -1.57079
-texture = ExtResource("2_0bfn5")
+texture = ExtResource("1_c73wk")
 hframes = 2
+frame = 1
 metadata/_aseprite_wizard_config_ = {
 "i_mode": -1,
 "keep_anim_length": false,
@@ -60,18 +63,23 @@ metadata/_aseprite_wizard_config_ = {
 "only_visible": true,
 "player": "AnimationPlayer",
 "slice": "",
-"source": "res://aseprite/cometa.aseprite"
+"source": "res://aseprite/ovni_final.aseprite"
 }
 metadata/_aseprite_wizard_interface_config_ = {
 "layer_section": false
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3, -2)
-shape = SubResource("CircleShape2D_x628k")
+position = Vector2(-18, 46)
+rotation = -1.57079
+shape = SubResource("CapsuleShape2D_hf5ga")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_8fdrv")
+"": SubResource("AnimationLibrary_fewk8")
 }
 autoplay = "default"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-18, -30)
+shape = SubResource("CircleShape2D_b0kgj")

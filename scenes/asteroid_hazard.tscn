@@ -1,20 +1,89 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqdrt7oox6d1c"]
+[gd_scene load_steps=10 format=3 uid="uid://bqdrt7oox6d1c"]
 
 [ext_resource type="Script" path="res://scripts/asteroid_hazard.gd" id="1_cpxdu"]
-[ext_resource type="Texture2D" uid="uid://dvral7uadmu8m" path="res://borrar2.png" id="1_r18wq"]
+[ext_resource type="Shader" path="res://shaders/boiling-shader.gdshader" id="2_xpg5s"]
+[ext_resource type="Texture2D" uid="uid://cuv007jclkd7j" path="res://scenes/asteroide.png" id="3_8rqif"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wfh3b"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3ptjr"]
+noise = SubResource("FastNoiseLite_wfh3b")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_787qi"]
+shader = ExtResource("2_xpg5s")
+shader_parameter/distortion_strengh = 0.001
+shader_parameter/speed = 0.904
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_3ptjr")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iewyh"]
-radius = 27.0
+radius = 111.018
+
+[sub_resource type="Animation" id="Animation_xdfar"]
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_thi8h"]
+_data = {
+"default": SubResource("Animation_xdfar")
+}
 
 [node name="AsteroidHazard" type="StaticBody2D"]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_cpxdu")
 
-[node name="Borrar2" type="Sprite2D" parent="."]
-position = Vector2(3.8147e-06, 4)
-scale = Vector2(0.0833334, 0.0833334)
-texture = ExtResource("1_r18wq")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_787qi")
+texture = ExtResource("3_8rqif")
+hframes = 2
+frame = 1
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "AnimationPlayer",
+"slice": "",
+"source": "res://aseprite/asteroide.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7, 18)
 shape = SubResource("CircleShape2D_iewyh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_thi8h")
+}
+autoplay = "default"
