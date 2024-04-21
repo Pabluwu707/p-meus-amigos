@@ -10,3 +10,6 @@ func _ready():
 func _physics_process(delta):
 	#move_and_collide(direction*SPEED)
 	var collide_info = move_and_collide(direction*SPEED*delta)
+	if collide_info:
+		print("DISABLED")
+		%CollisionShape2D.disabled = true

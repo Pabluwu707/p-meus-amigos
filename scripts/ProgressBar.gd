@@ -13,7 +13,6 @@ func _ready():
 func _process(delta):
 	value = ((Player.get_position().x - inicio_jugador) / distancia_meta) * 100
 	%PathFollow2D.progress_ratio = value / 100
-	print(%Cabeza.position)
 
 func setup_distancia(player, meta, initialposition):
 	print(initialposition)

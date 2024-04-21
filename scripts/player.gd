@@ -38,27 +38,34 @@ func _physics_process(delta):
 		velocity = -velocity
 		momentum = momentum.rotated(momentum.angle_to(velocity)) * 0.7
 		on_knockback()
+	
+	if position.x < -50 or position.y < 0 or position.y > 950:
+		velocity = -velocity
+		momentum = momentum.rotated(momentum.angle_to(velocity)) * 0.7
+		on_wall_knockback()
+		
+	var direction = Input.get_vector("left", "right", "up", "down")
+	
+	if (in_knockback or !playable):
+		direction = Vector2(0, 0)
+	
+	var break_bonus = 1
+	if are_oposite_vectors(direction, velocity):
+		break_bonus = BREAK_BONUS
+	
+	momentum += direction * delta * ACCELERATION * break_bonus
+	
+	if momentum.length() > 1.0:
+		momentum = momentum.normalized()
+		
+	if direction.length() == 0:
+		momentum -= momentum * RESISTANCE * delta
 
-		
-	elif playable:
-		var direction = Input.get_vector("left", "right", "up", "down")
-		
-		if (in_knockback):
-			direction = Vector2(0, 0)
-		
-		var break_bonus = 1
-		if are_oposite_vectors(direction, velocity):
-			break_bonus = BREAK_BONUS
-		
-		momentum += direction * delta * ACCELERATION * break_bonus
-		
-		if momentum.length() > 1.0:
-			momentum = momentum.normalized()
-			
-		if direction.length() == 0:
-			momentum -= momentum * RESISTANCE * delta
+	velocity = momentum * MAX_SPEED
 
-		velocity = momentum * MAX_SPEED
+func on_wall_knockback():
+	in_knockback = true
+	%KnockbackTimer.start()
 
 func on_knockback():
 	if (!invencible):
@@ -109,3 +116,14 @@ func update_animation_parameters():
 
 func _on_flick_timer_timeout():
 	visible = !visible
+
+
+func _on_respawn_timer_timeout():
+	print(position.y)
+	if position.x < -49 or position.y < 0 or position.y > 951:
+		position.y = 400
+		on_knockback()
+
+
+func _on_area_2d_body_entered(body):
+	playable = false
