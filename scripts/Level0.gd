@@ -7,14 +7,12 @@ extends Node
 
 # Start the game
 func _ready():
-	#game_state.start_game()
 	print("COMIENZA")
 	game_controller.setup_level(5,100)
-	ui.setup_ui(5, 100)
+	ui.setup_ui(5, 100, player.get_position().x)
 	_connect_player_damage()
 
 
 func _connect_player_damage():
 	player.player_collisions_with_hazard.connect(game_controller.handle_damage)
 	game_controller.update_life_ui.connect(ui.change_vida)
-	print("CONECT")

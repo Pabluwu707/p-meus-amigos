@@ -1,0 +1,152 @@
+[gd_scene load_steps=11 format=3 uid="uid://dajifm4ulodf8"]
+
+[ext_resource type="Shader" path="res://shaders/boiling-shader.gdshader" id="1_svd27"]
+[ext_resource type="Texture2D" uid="uid://clhw1j7k83udx" path="res://assets/background.png" id="2_hdva5"]
+[ext_resource type="Texture2D" uid="uid://dl6v34dc03ff1" path="res://assets/backgroundparallax.png" id="3_epuin"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7ky6i"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dfs6s"]
+noise = SubResource("FastNoiseLite_7ky6i")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_owt6u"]
+shader = ExtResource("1_svd27")
+shader_parameter/distortion_strengh = 0.001
+shader_parameter/speed = 0.36
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_dfs6s")
+
+[sub_resource type="Animation" id="Animation_5dkty"]
+length = 1.35
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.45, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n6i7g"]
+_data = {
+"default": SubResource("Animation_5dkty")
+}
+
+[sub_resource type="Animation" id="Animation_d6li2"]
+length = 1.35
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.45, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_24hug"]
+_data = {
+"default": SubResource("Animation_d6li2")
+}
+
+[node name="CanvasLayer2" type="CanvasLayer"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Layer 1" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -12
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(1200, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Layer 1"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_owt6u")
+position = Vector2(640, 480)
+texture = ExtResource("2_hdva5")
+hframes = 2
+vframes = 2
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "ParallaxBackground/Layer 1/AnimationPlayer",
+"slice": "",
+"source": "res://aseprite/background.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ParallaxBackground/Layer 1"]
+libraries = {
+"": SubResource("AnimationLibrary_n6i7g")
+}
+autoplay = "default"
+
+[node name="Layer 2" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -10
+motion_scale = Vector2(0.7, 0.7)
+motion_mirroring = Vector2(3600, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Layer 2"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_owt6u")
+position = Vector2(1827, 480)
+texture = ExtResource("3_epuin")
+hframes = 2
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "CanvasLayer2/ParallaxBackground/Layer 2/AnimationPlayer",
+"slice": "",
+"source": "res://aseprite/backgroundparallax.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ParallaxBackground/Layer 2"]
+libraries = {
+"": SubResource("AnimationLibrary_24hug")
+}

@@ -1,15 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://bbvqpcrnor35v"]
+[gd_scene load_steps=9 format=3 uid="uid://bbvqpcrnor35v"]
 
 [ext_resource type="PackedScene" uid="uid://0rthx7bvralu" path="res://scenes/player.tscn" id="1_c5cja"]
 [ext_resource type="Script" path="res://scripts/Level0.gd" id="1_uggbf"]
-[ext_resource type="PackedScene" uid="uid://cek04hcxvr0wc" path="res://scenes/ejemplo-boiling.tscn" id="2_oqeca"]
 [ext_resource type="PackedScene" uid="uid://cdxwedukr5yl" path="res://scenes/level_controller.tscn" id="2_sidqs"]
 [ext_resource type="PackedScene" uid="uid://p2sud2l3qm5l" path="res://scenes/camera_2d.tscn" id="4_w7exc"]
 [ext_resource type="PackedScene" uid="uid://cdt2egiu025pg" path="res://scenes/ui.tscn" id="5_7t4hg"]
-[ext_resource type="PackedScene" uid="uid://c35nl45fuxt6a" path="res://scenes/car_spawner.tscn" id="7_jono8"]
-[ext_resource type="PackedScene" uid="uid://ba62prgnkj1lw" path="res://scenes/planet.tscn" id="8_cbiy8"]
-[ext_resource type="PackedScene" uid="uid://bqdrt7oox6d1c" path="res://scenes/asteroid_hazard.tscn" id="9_4eunf"]
-[ext_resource type="PackedScene" uid="uid://c7p6mvhmvioke" path="res://scenes/cow_spawner.tscn" id="10_343ea"]
+[ext_resource type="PackedScene" uid="uid://dajifm4ulodf8" path="res://scenes/fondo_parallax.tscn" id="7_03ehh"]
+[ext_resource type="Texture2D" uid="uid://bkygpofersocq" path="res://BORRAR.png" id="7_y186v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ux5u"]
+size = Vector2(164, 1029)
 
 [node name="Level0" type="Node2D"]
 script = ExtResource("1_uggbf")
@@ -17,37 +17,32 @@ script = ExtResource("1_uggbf")
 [node name="LevelController" parent="." instance=ExtResource("2_sidqs")]
 
 [node name="Player" parent="." instance=ExtResource("1_c5cja")]
-position = Vector2(443, 409)
+position = Vector2(400, 409)
 
 [node name="Camera2D" parent="Player" node_paths=PackedStringArray("PlayerNode") instance=ExtResource("4_w7exc")]
 PlayerNode = NodePath("..")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="UI" parent="CanvasLayer" instance=ExtResource("5_7t4hg")]
-
-[node name="Fondo" type="Node2D" parent="."]
-z_index = -1
-
-[node name="Amigo-momento" parent="Fondo" instance=ExtResource("2_oqeca")]
-position = Vector2(670, 580)
-
-[node name="Amigo-momento2" parent="Fondo" instance=ExtResource("2_oqeca")]
-position = Vector2(1162, 422)
-
-[node name="Amigo-momento3" parent="Fondo" instance=ExtResource("2_oqeca")]
-position = Vector2(256, 339)
+[node name="UI" parent="CanvasLayer" node_paths=PackedStringArray("Player", "Meta") instance=ExtResource("5_7t4hg")]
+Player = NodePath("../../Player")
+Meta = NodePath("../../Meta")
 
 [node name="Hazards" type="Node2D" parent="."]
 
-[node name="StaticBody2D" parent="." instance=ExtResource("8_cbiy8")]
-position = Vector2(674, 836)
+[node name="Meta" type="Node2D" parent="."]
+position = Vector2(3535, 479)
 
-[node name="AsteroidHazard" parent="." instance=ExtResource("9_4eunf")]
-position = Vector2(602, 274)
+[node name="Area2D" type="Area2D" parent="Meta"]
 
-[node name="CarSpawner" parent="." instance=ExtResource("7_jono8")]
-position = Vector2(1480, 13)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Meta/Area2D"]
+position = Vector2(-5, -4.5)
+shape = SubResource("RectangleShape2D_4ux5u")
 
-[node name="CowSpawner" parent="." instance=ExtResource("10_343ea")]
-position = Vector2(541, 6)
+[node name="Sprite2D" type="Sprite2D" parent="Meta"]
+z_index = -1
+position = Vector2(291, 260)
+scale = Vector2(0.46582, 0.46582)
+texture = ExtResource("7_y186v")
+
+[node name="Fondo Parallax" parent="." instance=ExtResource("7_03ehh")]

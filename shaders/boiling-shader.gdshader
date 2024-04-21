@@ -2,7 +2,7 @@ shader_type canvas_item;
 
 uniform sampler2D noise_texture : repeat_enable;
 uniform float distortion_strengh: hint_range(0, 0.1) = 1.0;
-uniform float speed: hint_range(0.1, 10) = 1.0;
+uniform float speed: hint_range(0.1, 10);
 
 void vertex() {
 	// Called for every vertex the material is visible on.

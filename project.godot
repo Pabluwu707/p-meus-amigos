@@ -20,6 +20,10 @@ config/icon="res://icono.png"
 window/size/viewport_width=1280
 window/size/viewport_height=960
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
+
 [input]
 
 up={

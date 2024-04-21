@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://chr8rticxiyjh"
+path="res://.godot/imported/fondo de estrellas.aseprite-f3f05b7a82987b9bc6c90c58e555ecdb.res"
+
+[deps]
+
+source_file="res://aseprite/fondo de estrellas.aseprite"
+dest_files=["res://.godot/imported/fondo de estrellas.aseprite-f3f05b7a82987b9bc6c90c58e555ecdb.res"]
+
+[params]
+
