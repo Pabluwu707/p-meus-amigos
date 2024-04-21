@@ -1,11 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://cfv2ng5ssd64q"]
+[gd_scene load_steps=18 format=3 uid="uid://cfv2ng5ssd64q"]
 
 [ext_resource type="Script" path="res://scripts/Level0.gd" id="1_q8vq5"]
 [ext_resource type="PackedScene" uid="uid://cdxwedukr5yl" path="res://scenes/level_controller.tscn" id="2_o4sv7"]
 [ext_resource type="PackedScene" uid="uid://0rthx7bvralu" path="res://scenes/player.tscn" id="3_gr72h"]
 [ext_resource type="PackedScene" uid="uid://p2sud2l3qm5l" path="res://scenes/camera_2d.tscn" id="4_5d0xm"]
 [ext_resource type="PackedScene" uid="uid://cdt2egiu025pg" path="res://scenes/ui.tscn" id="5_lu7s8"]
-[ext_resource type="Texture2D" uid="uid://bkygpofersocq" path="res://BORRAR.png" id="6_7lcbe"]
+[ext_resource type="Texture2D" uid="uid://c1errg1a3htln" path="res://scenes/planeta dia 3.png" id="6_3d1p8"]
 [ext_resource type="PackedScene" path="res://scenes/fondo_parallax.tscn" id="7_gmamn"]
 [ext_resource type="PackedScene" uid="uid://n7l4210ok7a3" path="res://scenes/asteroid_small_hazard.tscn" id="8_p87of"]
 [ext_resource type="PackedScene" uid="uid://du5ko2cpsk1dp" path="res://scenes/ovni_spawner.tscn" id="9_88car"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://bqdrt7oox6d1c" path="res://scenes/asteroid_hazard.tscn" id="12_crjfs"]
 [ext_resource type="PackedScene" uid="uid://b4gt7stkwumbt" path="res://scenes/comet_spawner.tscn" id="13_rrqu0"]
 [ext_resource type="PackedScene" uid="uid://c7p6mvhmvioke" path="res://scenes/cow_spawner.tscn" id="14_ghad1"]
+[ext_resource type="AudioStream" uid="uid://8dg2nwi0jxmm" path="res://assets/nivel.wav" id="15_a73ak"]
+[ext_resource type="AudioStream" uid="uid://ceh52yex4mgy1" path="res://assets/META.mp3" id="16_p6orh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ux5u"]
 size = Vector2(164, 1029)
@@ -46,11 +48,24 @@ position = Vector2(10494, 479)
 position = Vector2(-5, -4.5)
 shape = SubResource("RectangleShape2D_4ux5u")
 
-[node name="Sprite2D" type="Sprite2D" parent="Meta"]
-z_index = -1
-position = Vector2(291, 260)
-scale = Vector2(0.46582, 0.46582)
-texture = ExtResource("6_7lcbe")
+[node name="Sprite2D2" type="Sprite2D" parent="Meta"]
+texture_filter = 1
+texture = ExtResource("6_3d1p8")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "",
+"slice": "",
+"source": "res://aseprite/planeta dia 3.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false
+}
 
 [node name="Fondo Parallax" parent="." instance=ExtResource("7_gmamn")]
 
@@ -122,5 +137,16 @@ position = Vector2(4709, 242)
 
 [node name="CowSpawner" parent="." instance=ExtResource("14_ghad1")]
 position = Vector2(4914, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("15_a73ak")
+volume_db = -10.0
+autoplay = true
+
+[node name="Victory" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("16_p6orh")
+volume_db = -10.0
 
 [connection signal="body_entered" from="Meta/Area2D" to="Player" method="_on_area_2d_body_entered"]

@@ -74,6 +74,7 @@ func on_knockback():
 		visible = false
 		invencible = true
 		player_collisions_with_hazard.emit()
+		%Damage.play()
 		
 	in_knockback = true
 	%KnockbackTimer.start()
@@ -122,6 +123,7 @@ func _on_respawn_timer_timeout():
 	print(position.y)
 	if position.x < -49 or position.y < 0 or position.y > 951:
 		position.y = 400
+		position.x += 10
 		on_knockback()
 
 

@@ -4,6 +4,7 @@ var running = true
 
 func _ready():
 	%SpawnTimer.start()
+	print("ONREADY PIPIIIII")
 
 func spawn_car():
 	var car = preload("res://scenes/car_hazard.tscn").instantiate()

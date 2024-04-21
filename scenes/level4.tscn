@@ -1,11 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://bkaybs2xedlkv"]
+[gd_scene load_steps=18 format=3 uid="uid://bkaybs2xedlkv"]
 
 [ext_resource type="Script" path="res://scripts/Level0.gd" id="1_y2jni"]
 [ext_resource type="PackedScene" uid="uid://cdxwedukr5yl" path="res://scenes/level_controller.tscn" id="2_aovfx"]
 [ext_resource type="PackedScene" uid="uid://0rthx7bvralu" path="res://scenes/player.tscn" id="3_cc815"]
 [ext_resource type="PackedScene" uid="uid://p2sud2l3qm5l" path="res://scenes/camera_2d.tscn" id="4_pdssf"]
 [ext_resource type="PackedScene" uid="uid://cdt2egiu025pg" path="res://scenes/ui.tscn" id="5_8ge7v"]
-[ext_resource type="Texture2D" uid="uid://bkygpofersocq" path="res://BORRAR.png" id="6_1jmei"]
+[ext_resource type="Texture2D" uid="uid://bs4p0dnopwb7l" path="res://scenes/planeta dia 4.png" id="6_xg76e"]
 [ext_resource type="PackedScene" path="res://scenes/fondo_parallax.tscn" id="7_1sjlf"]
 [ext_resource type="PackedScene" uid="uid://ba62prgnkj1lw" path="res://scenes/planet.tscn" id="8_07656"]
 [ext_resource type="PackedScene" uid="uid://c7p6mvhmvioke" path="res://scenes/cow_spawner.tscn" id="9_u2hvb"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://c35nl45fuxt6a" path="res://scenes/car_spawner.tscn" id="12_sp8tj"]
 [ext_resource type="PackedScene" uid="uid://b4gt7stkwumbt" path="res://scenes/comet_spawner.tscn" id="13_mf1ad"]
 [ext_resource type="PackedScene" uid="uid://du5ko2cpsk1dp" path="res://scenes/ovni_spawner.tscn" id="14_looxx"]
+[ext_resource type="AudioStream" uid="uid://8dg2nwi0jxmm" path="res://assets/nivel.wav" id="15_s35wi"]
+[ext_resource type="AudioStream" uid="uid://ceh52yex4mgy1" path="res://assets/META.mp3" id="16_wrs2j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ux5u"]
 size = Vector2(164, 1029)
@@ -46,11 +48,24 @@ position = Vector2(10494, 479)
 position = Vector2(-5, -4.5)
 shape = SubResource("RectangleShape2D_4ux5u")
 
-[node name="Sprite2D" type="Sprite2D" parent="Meta"]
-z_index = -1
-position = Vector2(291, 260)
-scale = Vector2(0.46582, 0.46582)
-texture = ExtResource("6_1jmei")
+[node name="Sprite2D2" type="Sprite2D" parent="Meta"]
+texture_filter = 1
+texture = ExtResource("6_xg76e")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "",
+"slice": "",
+"source": "res://aseprite/planeta dia 4.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true
+}
 
 [node name="Fondo Parallax" parent="." instance=ExtResource("7_1sjlf")]
 
@@ -122,5 +137,16 @@ position = Vector2(6924, 23)
 
 [node name="OvniSpawner2" parent="." instance=ExtResource("14_looxx")]
 position = Vector2(9198, 9)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("15_s35wi")
+volume_db = -10.0
+autoplay = true
+
+[node name="Victory" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("16_wrs2j")
+volume_db = -10.0
 
 [connection signal="body_entered" from="Meta/Area2D" to="Player" method="_on_area_2d_body_entered"]

@@ -1,7 +1,7 @@
 extends Node
 
 
-var dia : int = 1
+var dia : int = 2
 var current_dinero : int = 0
 var current_max_vida : int = 5
 var current_recompensa : int = 0
