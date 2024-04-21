@@ -38,7 +38,11 @@ func _physics_process(delta):
 		velocity = -velocity
 		momentum = momentum.rotated(momentum.angle_to(velocity)) * 0.7
 		on_knockback()
-
+	
+	if position.x < -50 or position.y < 0 or position.y > 950:
+		velocity = -velocity
+		momentum = momentum.rotated(momentum.angle_to(velocity)) * 0.7
+		on_wall_knockback()
 		
 	elif playable:
 		var direction = Input.get_vector("left", "right", "up", "down")
@@ -59,6 +63,10 @@ func _physics_process(delta):
 			momentum -= momentum * RESISTANCE * delta
 
 		velocity = momentum * MAX_SPEED
+
+func on_wall_knockback():
+	in_knockback = true
+	%KnockbackTimer.start()
 
 func on_knockback():
 	if (!invencible):
