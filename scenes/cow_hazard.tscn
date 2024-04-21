@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvg5t7o2q71gc"]
+
+[ext_resource type="Script" path="res://scripts/cow_hazard.gd" id="1_fw6rt"]
+[ext_resource type="Texture2D" uid="uid://djxttyy8q3b2y" path="res://borrar6.png" id="1_ynctr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o7kq1"]
+radius = 89.0
+height = 396.0
+
+[node name="CowHazard" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_fw6rt")
+
+[node name="Borrar6" type="Sprite2D" parent="."]
+position = Vector2(43, 35)
+texture = ExtResource("1_ynctr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(45, -2)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_o7kq1")

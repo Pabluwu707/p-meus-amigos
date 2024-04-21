@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c35nl45fuxt6a"]
+
+[ext_resource type="Script" path="res://scripts/car_spawner.gd" id="1_xreai"]
+
+[sub_resource type="Curve2D" id="Curve2D_cecxq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1179, 97, 0, 0, 0, 0, 1179, 895)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7syv5"]
+size = Vector2(109, 981)
+
+[node name="CarSpawner" type="Area2D"]
+script = ExtResource("1_xreai")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_cecxq")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+unique_name_in_owner = true
+position = Vector2(1179, 97)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(530, 483)
+shape = SubResource("RectangleShape2D_7syv5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

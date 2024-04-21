@@ -7,6 +7,7 @@
 radius = 27.074
 
 [node name="CometHazard" type="CharacterBody2D"]
+collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_wknsu")
 

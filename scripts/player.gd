@@ -34,7 +34,6 @@ func _physics_process(delta):
 	var collision_info = move_and_collide(velocity)
 	
 	if collision_info:
-		print("ayayayayayaya")
 		#velocity = velocity.bounce(collision_info.get_normal())
 		velocity = -velocity
 		momentum = momentum.rotated(momentum.angle_to(velocity)) * 0.7
@@ -50,7 +49,6 @@ func _physics_process(delta):
 		var break_bonus = 1
 		if are_oposite_vectors(direction, velocity):
 			break_bonus = BREAK_BONUS
-			#print("BREAAAAAAAAK")
 		
 		momentum += direction * delta * ACCELERATION * break_bonus
 		

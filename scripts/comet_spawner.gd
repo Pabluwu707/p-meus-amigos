@@ -6,6 +6,7 @@ func _on_body_entered(other):
 	#if other.typeof("Player"):
 	print("PLAYERCOLLIDE")
 	if !activated:
+		activated = true
 		spawn_comet()
 	
 func spawn_comet():
