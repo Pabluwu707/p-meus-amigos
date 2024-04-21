@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjow8lnt363ul"]
+[gd_scene load_steps=8 format=3 uid="uid://bjow8lnt363ul"]
 
 [ext_resource type="Script" path="res://scripts/CarHazard.gd" id="1_123ms"]
 [ext_resource type="Texture2D" uid="uid://mlvgm4gjb2ik" path="res://scenes/coche.png" id="3_vpvho"]
+[ext_resource type="AudioStream" uid="uid://cjauue8ffwdk8" path="res://assets/PERRO.mp3" id="4_8uhlo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gb2e1"]
 radius = 110.0
@@ -84,5 +85,9 @@ autoplay = "default"
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(-212, 42)
 shape = SubResource("CircleShape2D_3qwlq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_8uhlo")
+autoplay = true
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

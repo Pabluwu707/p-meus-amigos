@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://sgbvbwbemqxr"]
+[gd_scene load_steps=19 format=3 uid="uid://sgbvbwbemqxr"]
 
 [ext_resource type="PackedScene" uid="uid://0rthx7bvralu" path="res://scenes/player.tscn" id="1_osxso"]
 [ext_resource type="Script" path="res://scripts/level_intro.gd" id="1_xth50"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://drrcppxb43nuw" path="res://scenes/start.png" id="8_hoa76"]
 [ext_resource type="Texture2D" uid="uid://5xpw27g7p0p4" path="res://scenes/logo.png" id="9_bw56n"]
 [ext_resource type="Texture2D" uid="uid://bwkb01e0ye1ww" path="res://scenes/controles.png" id="9_ugq27"]
+[ext_resource type="AudioStream" uid="uid://brpxnf0r1m855" path="res://assets/cine_inicio_o_menu.wav" id="10_ooe21"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2877y"]
 size = Vector2(164, 1029)
@@ -243,5 +244,14 @@ libraries = {
 "": SubResource("AnimationLibrary_df1xd")
 }
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("10_ooe21")
+
+[node name="NextSceneTimet" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 12.0
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="NextSceneTimet" to="." method="_on_next_scene_timet_timeout"]

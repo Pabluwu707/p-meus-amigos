@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://mj0ospejq8e2"]
+[gd_scene load_steps=8 format=3 uid="uid://mj0ospejq8e2"]
 
 [ext_resource type="Texture2D" uid="uid://cfj1ujy4b2esi" path="res://scenes/ovni_final.png" id="1_c73wk"]
 [ext_resource type="Script" path="res://scripts/ovni_hazard.gd" id="1_houlf"]
+[ext_resource type="AudioStream" uid="uid://b01i0nu05ko8p" path="res://assets/OVNI.mp3" id="3_44lnp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hf5ga"]
 radius = 61.0
@@ -83,3 +84,8 @@ autoplay = "default"
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(-18, -30)
 shape = SubResource("CircleShape2D_b0kgj")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_44lnp")
+volume_db = 6.0
+autoplay = true

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5gwn5tyn2iet"]
+[gd_scene load_steps=6 format=3 uid="uid://c5gwn5tyn2iet"]
 
 [ext_resource type="Script" path="res://scripts/warning_sign.gd" id="1_hipfs"]
 [ext_resource type="Texture2D" uid="uid://cbys36kwmta3g" path="res://scenes/pipi.png" id="2_evbwp"]
+[ext_resource type="AudioStream" uid="uid://c4t5bckvn07o8" path="res://assets/CLAXON.mp3" id="3_j2cab"]
 
 [sub_resource type="Animation" id="Animation_5q1uu"]
 length = 0.4
@@ -69,5 +70,9 @@ metadata/_aseprite_wizard_config_ = {
 metadata/_aseprite_wizard_interface_config_ = {
 "layer_section": true
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_j2cab")
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
