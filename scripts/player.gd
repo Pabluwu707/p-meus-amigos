@@ -63,6 +63,8 @@ func _physics_process(delta):
 func on_knockback():
 	if (!invencible):
 		%GracePeriodTimer.start()
+		%FlickTimer.start()
+		visible = false
 		invencible = true
 		
 	in_knockback = true
@@ -73,6 +75,8 @@ func _on_knockback_timer_timeout():
 
 func _on_grace_period_timer_timeout():
 	invencible = false
+	visible = true
+	%FlickTimer.stop()
 
 func _process(delta):
 	update_animation_parameters()
@@ -100,3 +104,7 @@ func update_animation_parameters():
 		animation_tree["parameters/conditions/is_idle"] = false
 		animation_tree["parameters/conditions/is_moving_recto"] = false
 		animation_tree["parameters/conditions/is_moving_up"] = false
+
+
+func _on_flick_timer_timeout():
+	visible = !visible
