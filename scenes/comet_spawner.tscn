@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/comet_spawner.gd" id="1_s2ihj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kdgbl"]
-size = Vector2(68, 796)
+size = Vector2(68, 1030)
 
 [sub_resource type="Curve2D" id="Curve2D_k3n2o"]
 _data = {
@@ -15,6 +15,7 @@ point_count = 2
 script = ExtResource("1_s2ihj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 117)
 shape = SubResource("RectangleShape2D_kdgbl")
 debug_color = Color(0.745098, 0.223529, 0.980392, 0.419608)
 

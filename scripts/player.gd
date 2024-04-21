@@ -86,7 +86,6 @@ func update_animation_parameters():
 		animation_tree["parameters/conditions/is_moving_down"] = false
 		animation_tree["parameters/conditions/is_moving_up"] = false
 	elif (move_input_x != 0 && move_input_y == 0):
-		print("uwu")
 		animation_tree["parameters/conditions/is_moving_recto"] = true
 		animation_tree["parameters/conditions/is_idle"] = false
 		animation_tree["parameters/conditions/is_moving_down"] = false

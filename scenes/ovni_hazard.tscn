@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://mj0ospejq8e2"]
+[gd_scene load_steps=7 format=3 uid="uid://mj0ospejq8e2"]
 
 [ext_resource type="Texture2D" uid="uid://cfj1ujy4b2esi" path="res://scenes/ovni_final.png" id="1_c73wk"]
 [ext_resource type="Script" path="res://scripts/ovni_hazard.gd" id="1_houlf"]
@@ -43,13 +43,9 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_b0kgj"]
 radius = 69.029
 
-[sub_resource type="Curve2D" id="Curve2D_dyc6o"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -5, 3, 48.0833, 83.4386, -48.0833, -83.4386, -271, -99, -16.9706, 125.865, 16.9706, -125.865, -202, -323, 108.894, 138.593, -108.894, -138.593, -722, -395, 2.82843, 134.35, -2.82843, -134.35, -712, -799, 86.267, 36.7696, -86.267, -36.7696, -1095, -914, 0, 0, 0, 0, -1130, -1403)
-}
-point_count = 7
-
 [node name="OvniHazard" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_houlf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -82,14 +78,8 @@ shape = SubResource("CapsuleShape2D_hf5ga")
 libraries = {
 "": SubResource("AnimationLibrary_fewk8")
 }
+autoplay = "default"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(-18, -30)
 shape = SubResource("CircleShape2D_b0kgj")
-
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_dyc6o")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(-5, 3)
-rotation = -2.77543

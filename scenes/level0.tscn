@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bbvqpcrnor35v"]
+[gd_scene load_steps=14 format=3 uid="uid://bbvqpcrnor35v"]
 
 [ext_resource type="PackedScene" uid="uid://0rthx7bvralu" path="res://scenes/player.tscn" id="1_c5cja"]
 [ext_resource type="Script" path="res://scripts/Level0.gd" id="1_uggbf"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c35nl45fuxt6a" path="res://scenes/car_spawner.tscn" id="9_siqeg"]
 [ext_resource type="PackedScene" uid="uid://c7p6mvhmvioke" path="res://scenes/cow_spawner.tscn" id="10_lhqoy"]
 [ext_resource type="PackedScene" uid="uid://b4gt7stkwumbt" path="res://scenes/comet_spawner.tscn" id="11_aqbiv"]
+[ext_resource type="PackedScene" uid="uid://du5ko2cpsk1dp" path="res://scenes/ovni_spawner.tscn" id="12_1xrsh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ux5u"]
 size = Vector2(164, 1029)
@@ -21,7 +22,7 @@ script = ExtResource("1_uggbf")
 [node name="LevelController" parent="." instance=ExtResource("2_sidqs")]
 
 [node name="Player" parent="." instance=ExtResource("1_c5cja")]
-position = Vector2(400, 409)
+position = Vector2(333, 413)
 
 [node name="Camera2D" parent="Player" node_paths=PackedStringArray("PlayerNode") instance=ExtResource("4_w7exc")]
 PlayerNode = NodePath("..")
@@ -58,10 +59,13 @@ position = Vector2(781, 231)
 position = Vector2(1435, 777)
 
 [node name="CarSpawner" parent="." instance=ExtResource("9_siqeg")]
-position = Vector2(640, -4)
+position = Vector2(602, -2)
 
 [node name="CowSpawner" parent="." instance=ExtResource("10_lhqoy")]
-position = Vector2(1163, 9)
+position = Vector2(988, 9)
 
 [node name="CometSpawner" parent="." instance=ExtResource("11_aqbiv")]
-position = Vector2(192, 474)
+position = Vector2(2188, 363)
+
+[node name="OvniSpawner" parent="." instance=ExtResource("12_1xrsh")]
+position = Vector2(24, 1)

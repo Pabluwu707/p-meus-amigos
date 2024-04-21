@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://du5ko2cpsk1dp"]
+
+[ext_resource type="Script" path="res://scripts/OvniSpawner.gd" id="1_vltdq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_milt7"]
+size = Vector2(191, 989)
+
+[node name="OvniSpawner" type="Area2D"]
+script = ExtResource("1_vltdq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(529, 481)
+shape = SubResource("RectangleShape2D_milt7")
+
+[node name="Point" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1185, 1097)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
