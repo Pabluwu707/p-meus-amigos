@@ -8,12 +8,13 @@ extends Node
 var global = Global
 
 func _process(delta):
-	if %AudioStreamPlayer.playing == false:
+	if %AudioStreamPlayer.playing == false and get_node("Player").playable:
 		%AudioStreamPlayer.play()
 
 # Start the game
 func _ready():
 	print("COMIENZA")
+	%AudioStreamPlayer.play()
 	game_controller.setup_level(Global.current_max_vida,Global.current_dinero)
 	ui.setup_ui(Global.current_max_vida,Global.current_dinero, player.get_position().x)
 	_connect_player_damage()
@@ -26,3 +27,5 @@ func _connect_player_damage():
 
 func _on_area_2d_body_entered(body):
 	get_node("Player").playable = false
+	%Victory.play()
+	%AudioStreamPlayer.stop()

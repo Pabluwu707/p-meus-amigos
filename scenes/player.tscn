@@ -1,8 +1,9 @@
-[gd_scene load_steps=31 format=3 uid="uid://0rthx7bvralu"]
+[gd_scene load_steps=32 format=3 uid="uid://0rthx7bvralu"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_0y6ha"]
 [ext_resource type="Shader" path="res://shaders/boiling-shader.gdshader" id="1_rshh2"]
 [ext_resource type="Texture2D" uid="uid://7008pf0b315p" path="res://assets/Repartidor.png" id="2_e3v2r"]
+[ext_resource type="AudioStream" uid="uid://bjfva4emj2xpy" path="res://assets/GOLPE.mp3" id="4_rjmqq"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_wfh3b"]
 
@@ -281,6 +282,10 @@ wait_time = 0.1
 unique_name_in_owner = true
 wait_time = 3.0
 autostart = true
+
+[node name="Damage" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_rjmqq")
 
 [connection signal="timeout" from="KnockbackTimer" to="." method="_on_knockback_timer_timeout"]
 [connection signal="timeout" from="GracePeriodTimer" to="." method="_on_grace_period_timer_timeout"]

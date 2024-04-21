@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cfv2ng5ssd64q"]
+[gd_scene load_steps=18 format=3 uid="uid://cfv2ng5ssd64q"]
 
 [ext_resource type="Script" path="res://scripts/Level0.gd" id="1_q8vq5"]
 [ext_resource type="PackedScene" uid="uid://cdxwedukr5yl" path="res://scenes/level_controller.tscn" id="2_o4sv7"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://b4gt7stkwumbt" path="res://scenes/comet_spawner.tscn" id="13_rrqu0"]
 [ext_resource type="PackedScene" uid="uid://c7p6mvhmvioke" path="res://scenes/cow_spawner.tscn" id="14_ghad1"]
 [ext_resource type="AudioStream" uid="uid://8dg2nwi0jxmm" path="res://assets/nivel.wav" id="15_a73ak"]
+[ext_resource type="AudioStream" uid="uid://ceh52yex4mgy1" path="res://assets/META.mp3" id="16_p6orh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ux5u"]
 size = Vector2(164, 1029)
@@ -129,5 +130,10 @@ unique_name_in_owner = true
 stream = ExtResource("15_a73ak")
 volume_db = -10.0
 autoplay = true
+
+[node name="Victory" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("16_p6orh")
+volume_db = -10.0
 
 [connection signal="body_entered" from="Meta/Area2D" to="Player" method="_on_area_2d_body_entered"]
