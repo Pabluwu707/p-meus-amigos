@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://5xnyajfm8mjl"
+path="res://.godot/imported/contador_dinero.aseprite-a6c41eb5a99ed8fb4b5b26fa01a90171.res"
+
+[deps]
+
+source_file="res://aseprite/contador_dinero.aseprite"
+dest_files=["res://.godot/imported/contador_dinero.aseprite-a6c41eb5a99ed8fb4b5b26fa01a90171.res"]
+
+[params]
+
