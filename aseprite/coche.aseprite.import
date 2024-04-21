@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://br16klw8dpih7"
+path="res://.godot/imported/coche.aseprite-5fb16fa50ef84c0b564782886a0821c6.res"
+
+[deps]
+
+source_file="res://aseprite/coche.aseprite"
+dest_files=["res://.godot/imported/coche.aseprite-5fb16fa50ef84c0b564782886a0821c6.res"]
+
+[params]
+

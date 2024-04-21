@@ -15,10 +15,6 @@ func spawn_car():
 	car.global_position.x = get_parent().get_parent().get_node("Player").global_position.x + 900
 	queue_free()
 
-func _on_flicker_timeout():
-	if (running):
-		%Sign.visible = !%Sign.visible
-
 
 func _on_spawn_timer_timeout():
 	running = false

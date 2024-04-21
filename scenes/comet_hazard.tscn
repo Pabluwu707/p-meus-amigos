@@ -1,21 +1,77 @@
-[gd_scene load_steps=4 format=3 uid="uid://d4c6g7vef6drt"]
+[gd_scene load_steps=6 format=3 uid="uid://d4c6g7vef6drt"]
 
 [ext_resource type="Script" path="res://scripts/CometHazard.gd" id="1_wknsu"]
-[ext_resource type="Texture2D" uid="uid://cm4uuf6sffdg2" path="res://borrar3.png" id="2_w26ie"]
+[ext_resource type="Texture2D" uid="uid://ihunvu604l3w" path="res://scenes/cometa.png" id="2_0bfn5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x628k"]
-radius = 27.074
+radius = 62.0322
+
+[sub_resource type="Animation" id="Animation_2km4n"]
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8fdrv"]
+_data = {
+"default": SubResource("Animation_2km4n")
+}
 
 [node name="CometHazard" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_wknsu")
 
-[node name="Borrar3" type="Sprite2D" parent="."]
-position = Vector2(1.52588e-05, -1.52588e-05)
-rotation = -0.785398
-scale = Vector2(0.179199, 0.179199)
-texture = ExtResource("2_w26ie")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-6, -121)
+rotation = -1.57079
+texture = ExtResource("2_0bfn5")
+hframes = 2
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "AnimationPlayer",
+"slice": "",
+"source": "res://aseprite/cometa.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -2)
 shape = SubResource("CircleShape2D_x628k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8fdrv")
+}
+autoplay = "default"
