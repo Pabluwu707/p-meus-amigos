@@ -5,13 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://cdxwedukr5yl" path="res://scenes/level_controller.tscn" id="2_sidqs"]
 [ext_resource type="PackedScene" uid="uid://p2sud2l3qm5l" path="res://scenes/camera_2d.tscn" id="4_w7exc"]
 [ext_resource type="PackedScene" uid="uid://cdt2egiu025pg" path="res://scenes/ui.tscn" id="5_7t4hg"]
-[ext_resource type="PackedScene" path="res://scenes/fondo_parallax.tscn" id="7_03ehh"]
+[ext_resource type="PackedScene" uid="uid://dajifm4ulodf8" path="res://scenes/fondo_parallax.tscn" id="7_03ehh"]
 [ext_resource type="Texture2D" uid="uid://bkygpofersocq" path="res://BORRAR.png" id="7_y186v"]
 [ext_resource type="PackedScene" uid="uid://bqdrt7oox6d1c" path="res://scenes/asteroid_hazard.tscn" id="8_pnbhb"]
-[ext_resource type="PackedScene" uid="uid://c35nl45fuxt6a" path="res://scenes/car_spawner.tscn" id="9_siqeg"]
-[ext_resource type="PackedScene" uid="uid://c7p6mvhmvioke" path="res://scenes/cow_spawner.tscn" id="10_lhqoy"]
+[ext_resource type="PackedScene" path="res://scenes/car_spawner.tscn" id="9_siqeg"]
+[ext_resource type="PackedScene" path="res://scenes/cow_spawner.tscn" id="10_lhqoy"]
 [ext_resource type="PackedScene" uid="uid://b4gt7stkwumbt" path="res://scenes/comet_spawner.tscn" id="11_aqbiv"]
-[ext_resource type="PackedScene" uid="uid://du5ko2cpsk1dp" path="res://scenes/ovni_spawner.tscn" id="12_1xrsh"]
+[ext_resource type="PackedScene" path="res://scenes/ovni_spawner.tscn" id="12_1xrsh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ux5u"]
 size = Vector2(164, 1029)

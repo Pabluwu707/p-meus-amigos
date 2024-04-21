@@ -66,6 +66,7 @@ func on_knockback():
 		%FlickTimer.start()
 		visible = false
 		invencible = true
+		player_collisions_with_hazard.emit()
 		
 	in_knockback = true
 	%KnockbackTimer.start()
