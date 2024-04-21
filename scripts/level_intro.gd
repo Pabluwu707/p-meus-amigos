@@ -20,3 +20,10 @@ func _process(delta):
 
 func _on_area_2d_body_entered(body):
 	tittle = true
+	%NextSceneTimet.start()
+	%AudioStreamPlayer.play()
+
+
+func _on_next_scene_timet_timeout():
+	%AudioStreamPlayer.stop()
+	# HACER AQUÍ LA SIGUIENTE ESCENA

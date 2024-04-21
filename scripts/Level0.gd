@@ -7,6 +7,10 @@ extends Node
 
 var global = Global
 
+func _process(delta):
+	if %AudioStreamPlayer.playing == false:
+		%AudioStreamPlayer.play()
+
 # Start the game
 func _ready():
 	print("COMIENZA")

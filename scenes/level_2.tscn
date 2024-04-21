@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dblt08t1wappe"]
+[gd_scene load_steps=16 format=3 uid="uid://dblt08t1wappe"]
 
 [ext_resource type="Script" path="res://scripts/Level0.gd" id="1_sb0na"]
 [ext_resource type="PackedScene" uid="uid://cdxwedukr5yl" path="res://scenes/level_controller.tscn" id="2_veau1"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b4gt7stkwumbt" path="res://scenes/comet_spawner.tscn" id="11_phbya"]
 [ext_resource type="PackedScene" uid="uid://n7l4210ok7a3" path="res://scenes/asteroid_small_hazard.tscn" id="12_hbve6"]
 [ext_resource type="PackedScene" uid="uid://du5ko2cpsk1dp" path="res://scenes/ovni_spawner.tscn" id="13_835ar"]
+[ext_resource type="AudioStream" uid="uid://8dg2nwi0jxmm" path="res://assets/nivel.wav" id="14_x5vhb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ux5u"]
 size = Vector2(164, 1029)
@@ -129,5 +130,11 @@ position = Vector2(10214, 330)
 
 [node name="OvniSpawner" parent="." instance=ExtResource("13_835ar")]
 position = Vector2(4549, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("14_x5vhb")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="body_entered" from="Meta/Area2D" to="Player" method="_on_area_2d_body_entered"]
