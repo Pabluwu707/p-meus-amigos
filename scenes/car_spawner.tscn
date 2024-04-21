@@ -4,7 +4,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_cecxq"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 712, 96, 0, 0, 0, 0, 712, 872)
+"points": PackedVector2Array(0, 0, 0, 0, 1179, 97, 0, 0, 0, 0, 1179, 895)
 }
 point_count = 2
 
@@ -19,7 +19,7 @@ curve = SubResource("Curve2D_cecxq")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 unique_name_in_owner = true
-position = Vector2(712, 96)
+position = Vector2(1179, 97)
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
