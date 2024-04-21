@@ -46,3 +46,5 @@ scale = Vector2(0.46582, 0.46582)
 texture = ExtResource("6_0r6jr")
 
 [node name="Fondo Parallax" parent="." instance=ExtResource("7_bqs6g")]
+
+[connection signal="body_entered" from="Meta/Area2D" to="Player" method="_on_area_2d_body_entered"]

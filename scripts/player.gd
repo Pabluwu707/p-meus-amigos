@@ -44,25 +44,24 @@ func _physics_process(delta):
 		momentum = momentum.rotated(momentum.angle_to(velocity)) * 0.7
 		on_wall_knockback()
 		
-	elif playable:
-		var direction = Input.get_vector("left", "right", "up", "down")
+	var direction = Input.get_vector("left", "right", "up", "down")
+	
+	if (in_knockback or !playable):
+		direction = Vector2(0, 0)
+	
+	var break_bonus = 1
+	if are_oposite_vectors(direction, velocity):
+		break_bonus = BREAK_BONUS
+	
+	momentum += direction * delta * ACCELERATION * break_bonus
+	
+	if momentum.length() > 1.0:
+		momentum = momentum.normalized()
 		
-		if (in_knockback or !playable):
-			direction = Vector2(0, 0)
-		
-		var break_bonus = 1
-		if are_oposite_vectors(direction, velocity):
-			break_bonus = BREAK_BONUS
-		
-		momentum += direction * delta * ACCELERATION * break_bonus
-		
-		if momentum.length() > 1.0:
-			momentum = momentum.normalized()
-			
-		if direction.length() == 0:
-			momentum -= momentum * RESISTANCE * delta
+	if direction.length() == 0:
+		momentum -= momentum * RESISTANCE * delta
 
-		velocity = momentum * MAX_SPEED
+	velocity = momentum * MAX_SPEED
 
 func on_wall_knockback():
 	in_knockback = true
@@ -123,3 +122,7 @@ func _on_respawn_timer_timeout():
 	if position.x < -49 or position.y < 0 or position.y > 951:
 		position.y = 400
 		on_knockback()
+
+
+func _on_area_2d_body_entered(body):
+	playable = false
