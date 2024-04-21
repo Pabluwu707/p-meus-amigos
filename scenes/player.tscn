@@ -277,6 +277,12 @@ one_shot = true
 unique_name_in_owner = true
 wait_time = 0.1
 
+[node name="RespawnTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 3.0
+autostart = true
+
 [connection signal="timeout" from="KnockbackTimer" to="." method="_on_knockback_timer_timeout"]
 [connection signal="timeout" from="GracePeriodTimer" to="." method="_on_grace_period_timer_timeout"]
 [connection signal="timeout" from="FlickTimer" to="." method="_on_flick_timer_timeout"]
+[connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]

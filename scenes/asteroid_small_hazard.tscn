@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=3 uid="uid://n7l4210ok7a3"]
+
+[ext_resource type="Script" path="res://scripts/asteroid_hazard.gd" id="1_7wcfn"]
+[ext_resource type="Texture2D" uid="uid://pgbghg0aa4s2" path="res://scenes/asteroide pequeno.png" id="2_5gpvr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iewyh"]
+radius = 47.0
+
+[sub_resource type="Animation" id="Animation_h8lmo"]
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n8ioy"]
+_data = {
+"default": SubResource("Animation_h8lmo")
+}
+
+[node name="AsteroidHazard" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_7wcfn")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(456, 292)
+texture = ExtResource("2_5gpvr")
+hframes = 2
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "AnimationPlayer",
+"slice": "",
+"source": "res://aseprite/asteroide pequeno.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 12)
+shape = SubResource("CircleShape2D_iewyh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_n8ioy")
+}

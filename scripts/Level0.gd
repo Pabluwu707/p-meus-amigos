@@ -16,3 +16,7 @@ func _ready():
 func _connect_player_damage():
 	player.player_collisions_with_hazard.connect(game_controller.handle_damage)
 	game_controller.update_life_ui.connect(ui.change_vida)
+
+
+func _on_area_2d_body_entered(body):
+	get_node("Player").playable = false

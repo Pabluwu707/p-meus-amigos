@@ -47,7 +47,7 @@ func _physics_process(delta):
 	elif playable:
 		var direction = Input.get_vector("left", "right", "up", "down")
 		
-		if (in_knockback):
+		if (in_knockback or !playable):
 			direction = Vector2(0, 0)
 		
 		var break_bonus = 1
@@ -116,3 +116,10 @@ func update_animation_parameters():
 
 func _on_flick_timer_timeout():
 	visible = !visible
+
+
+func _on_respawn_timer_timeout():
+	print(position.y)
+	if position.x < -49 or position.y < 0 or position.y > 951:
+		position.y = 400
+		on_knockback()

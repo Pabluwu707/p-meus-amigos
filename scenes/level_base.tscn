@@ -31,7 +31,7 @@ Meta = NodePath("../../Meta")
 [node name="Hazards" type="Node2D" parent="."]
 
 [node name="Meta" type="Node2D" parent="."]
-position = Vector2(3535, 479)
+position = Vector2(10494, 479)
 
 [node name="Area2D" type="Area2D" parent="Meta"]
 

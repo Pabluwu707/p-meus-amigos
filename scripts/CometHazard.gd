@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 250
 var rng = RandomNumberGenerator.new()
-var random_rotation = rng.randf_range(-PI/4, PI/4)
+var random_rotation = rng.randf_range(-PI/4, 0)
 var direction = Vector2(0, 1).rotated(random_rotation)
 
 func _ready():
