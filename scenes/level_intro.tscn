@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://sgbvbwbemqxr"]
+[gd_scene load_steps=18 format=3 uid="uid://sgbvbwbemqxr"]
 
 [ext_resource type="PackedScene" uid="uid://0rthx7bvralu" path="res://scenes/player.tscn" id="1_osxso"]
 [ext_resource type="Script" path="res://scripts/level_intro.gd" id="1_xth50"]
@@ -6,15 +6,114 @@
 [ext_resource type="PackedScene" path="res://scenes/fondo_parallax.tscn" id="3_n0ud4"]
 [ext_resource type="PackedScene" uid="uid://p2sud2l3qm5l" path="res://scenes/camera_2d.tscn" id="4_xu1jq"]
 [ext_resource type="PackedScene" uid="uid://bqdrt7oox6d1c" path="res://scenes/asteroid_hazard.tscn" id="5_43mx6"]
-[ext_resource type="Texture2D" uid="uid://e6qifjmw2yav" path="res://borrar7.png" id="5_xgtbs"]
-[ext_resource type="Texture2D" uid="uid://cdtbmo4d1d16b" path="res://borrar5.png" id="6_5j0i7"]
-[ext_resource type="Texture2D" uid="uid://c4ollbh0nnnjh" path="res://borrar8.png" id="9_vmolg"]
+[ext_resource type="Texture2D" uid="uid://drrcppxb43nuw" path="res://scenes/start.png" id="8_hoa76"]
+[ext_resource type="Texture2D" uid="uid://5xpw27g7p0p4" path="res://scenes/logo.png" id="9_bw56n"]
+[ext_resource type="Texture2D" uid="uid://bwkb01e0ye1ww" path="res://scenes/controles.png" id="9_ugq27"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2877y"]
 size = Vector2(164, 1029)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dmjbb"]
 size = Vector2(153, 982)
+
+[sub_resource type="Animation" id="Animation_ib138"]
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Go:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Go:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4ilpp"]
+_data = {
+"default": SubResource("Animation_ib138")
+}
+
+[sub_resource type="Animation" id="Animation_qi4f5"]
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arrows:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Arrows:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3flbo"]
+_data = {
+"default": SubResource("Animation_qi4f5")
+}
+
+[sub_resource type="Animation" id="Animation_64a83"]
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Titulo:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Titulo:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_df1xd"]
+_data = {
+"default": SubResource("Animation_64a83")
+}
 
 [node name="LevelIntro" type="Node2D"]
 script = ExtResource("1_xth50")
@@ -50,9 +149,25 @@ position = Vector2(986, 847)
 
 [node name="Go" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(1047, 475)
-scale = Vector2(0.26888, 0.26888)
-texture = ExtResource("6_5j0i7")
+texture_filter = 1
+position = Vector2(1017, 494)
+texture = ExtResource("8_hoa76")
+hframes = 2
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "AnimationPlayer",
+"slice": "",
+"source": "res://aseprite/start.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true
+}
 
 [node name="ColorRect" type="ColorRect" parent="."]
 unique_name_in_owner = true
@@ -60,24 +175,71 @@ offset_right = 1292.0
 offset_bottom = 961.0
 color = Color(0, 0, 0, 1)
 
-[node name="Arrows" type="Sprite2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(733, 471)
-texture = ExtResource("5_xgtbs")
-
 [node name="Player" parent="." instance=ExtResource("1_osxso")]
 position = Vector2(193, 489)
-
-[node name="Titulo" type="Sprite2D" parent="."]
-unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0)
-position = Vector2(555, 459)
-texture = ExtResource("9_vmolg")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(1315, 470)
 shape = SubResource("RectangleShape2D_dmjbb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4ilpp")
+}
+
+[node name="Arrows" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(373, 246)
+texture = ExtResource("9_ugq27")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "AnimationPlayer2",
+"slice": "",
+"source": "res://aseprite/controles.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3flbo")
+}
+
+[node name="Titulo" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+position = Vector2(529, 488)
+texture = ExtResource("9_bw56n")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "AnimationPlayer3",
+"slice": "",
+"source": "res://aseprite/logo.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false
+}
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_df1xd")
+}
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

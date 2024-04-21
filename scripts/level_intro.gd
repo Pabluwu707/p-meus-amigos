@@ -14,7 +14,7 @@ func _process(delta):
 		%ColorRect.modulate.a -= delta
 		%Arrows.modulate.a -= delta
 	if tittle:
-		%Titulo.modulate.a += delta
+		%Titulo.modulate.a += delta*0.3
 		%Go.modulate.a -= delta
 
 
