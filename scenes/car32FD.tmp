@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjow8lnt363ul"]
+[gd_scene load_steps=6 format=3 uid="uid://bjow8lnt363ul"]
 
 [ext_resource type="Script" path="res://scripts/CarHazard.gd" id="1_123ms"]
 [ext_resource type="Texture2D" uid="uid://mlvgm4gjb2ik" path="res://scenes/coche.png" id="3_vpvho"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gb2e1"]
-radius = 110.0
-height = 420.0
+radius = 95.0
+height = 602.0
 
 [sub_resource type="Animation" id="Animation_efb16"]
 length = 0.9
@@ -40,9 +40,6 @@ _data = {
 "default": SubResource("Animation_efb16")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3qwlq"]
-radius = 76.0066
-
 [node name="CarHazard" type="RigidBody2D"]
 collision_layer = 2
 collision_mask = 0
@@ -71,7 +68,7 @@ metadata/_aseprite_wizard_interface_config_ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(69, -7)
+position = Vector2(10, -22)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_gb2e1")
 
@@ -80,9 +77,5 @@ libraries = {
 "": SubResource("AnimationLibrary_8aqt1")
 }
 autoplay = "default"
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-212, 42)
-shape = SubResource("CircleShape2D_3qwlq")
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

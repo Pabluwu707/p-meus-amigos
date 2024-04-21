@@ -16,8 +16,8 @@ shader_parameter/speed = 0.904
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_3ptjr")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ri1bv"]
-radius = 28.0
-height = 88.0
+radius = 30.0
+height = 84.0
 
 [sub_resource type="Animation" id="Animation_d80ns"]
 length = 0.25

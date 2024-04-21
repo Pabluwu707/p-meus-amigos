@@ -59,7 +59,7 @@ position = Vector2(781, 231)
 position = Vector2(1435, 777)
 
 [node name="CarSpawner" parent="." instance=ExtResource("9_siqeg")]
-position = Vector2(602, -2)
+position = Vector2(-422, 7)
 
 [node name="CowSpawner" parent="." instance=ExtResource("10_lhqoy")]
 position = Vector2(988, 9)
