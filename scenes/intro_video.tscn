@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://lq3itm7of0fx"]
+
+[ext_resource type="VideoStream" path="res://assets/INICIO.ogv" id="1_ahe6h"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer"]
+offset_left = 200.0
+offset_top = 160.0
+offset_right = 1484.0
+offset_bottom = 1118.0
+stream = ExtResource("1_ahe6h")
+autoplay = true
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 27.0
+autostart = true
