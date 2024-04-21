@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cdxwedukr5yl" path="res://scenes/level_controller.tscn" id="2_sidqs"]
 [ext_resource type="PackedScene" uid="uid://p2sud2l3qm5l" path="res://scenes/camera_2d.tscn" id="4_w7exc"]
 [ext_resource type="PackedScene" uid="uid://cdt2egiu025pg" path="res://scenes/ui.tscn" id="5_7t4hg"]
-[ext_resource type="PackedScene" uid="uid://covfs4itgi7x8" path="res://scenes/car_spawner.tscn" id="7_jono8"]
+[ext_resource type="PackedScene" uid="uid://c35nl45fuxt6a" path="res://scenes/car_spawner.tscn" id="7_jono8"]
 [ext_resource type="PackedScene" uid="uid://ba62prgnkj1lw" path="res://scenes/planet.tscn" id="8_cbiy8"]
 [ext_resource type="PackedScene" uid="uid://bqdrt7oox6d1c" path="res://scenes/asteroid_hazard.tscn" id="9_4eunf"]
 [ext_resource type="PackedScene" uid="uid://c7p6mvhmvioke" path="res://scenes/cow_spawner.tscn" id="10_343ea"]
@@ -46,8 +46,8 @@ position = Vector2(674, 836)
 [node name="AsteroidHazard" parent="." instance=ExtResource("9_4eunf")]
 position = Vector2(602, 274)
 
-[node name="CowSpawner" parent="." instance=ExtResource("10_343ea")]
-position = Vector2(-581, 2)
-
 [node name="CarSpawner" parent="." instance=ExtResource("7_jono8")]
-position = Vector2(671, -2)
+position = Vector2(1480, 13)
+
+[node name="CowSpawner" parent="." instance=ExtResource("10_343ea")]
+position = Vector2(541, 6)

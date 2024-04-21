@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bjow8lnt363ul"]
 
 [ext_resource type="Script" path="res://scripts/CarHazard.gd" id="1_123ms"]
-[ext_resource type="Texture2D" path="res://borrar4.png" id="2_4swfo"]
+[ext_resource type="Texture2D" uid="uid://b23mks3e0it2c" path="res://borrar4.png" id="2_4swfo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gb2e1"]
 radius = 58.0
