@@ -25,7 +25,6 @@ func to_level() -> void:
 			get_tree().change_scene_to_file(level3)
 	animation_player.play_backwards("fade")
 
-
 func to_menu() -> void:
 	# Plays the Fade animation and wait until it finishes
 	animation_player.play("fade")

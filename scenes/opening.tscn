@@ -1,0 +1,613 @@
+[gd_scene load_steps=31 format=3 uid="uid://cfs8xwcxo6cc"]
+
+[ext_resource type="PackedScene" uid="uid://bn8agm3ycnyxy" path="res://scenes/cutscene_manager.tscn" id="1_f85ya"]
+[ext_resource type="Texture2D" uid="uid://itt24le85rn5" path="res://scenes/inicio1.png" id="2_5r77a"]
+[ext_resource type="Texture2D" uid="uid://ge71bk8c2mm4" path="res://scenes/inicio2.png" id="3_u0xkp"]
+[ext_resource type="Texture2D" uid="uid://cx1p82stdtmq2" path="res://scenes/inicio3.png" id="4_bug86"]
+[ext_resource type="Texture2D" uid="uid://bm5vqi15uyap1" path="res://scenes/inicio4-1.png" id="5_8fwld"]
+[ext_resource type="Texture2D" uid="uid://4w77mxdewj5e" path="res://scenes/inicio5.png" id="6_1t0bi"]
+[ext_resource type="Texture2D" uid="uid://dyuyfpqotg6gf" path="res://scenes/inicio4-2.png" id="6_51u3k"]
+[ext_resource type="Texture2D" uid="uid://d3mttbugr10i7" path="res://scenes/inicio6.png" id="7_3kf1c"]
+[ext_resource type="Texture2D" uid="uid://cr2yad3gm3owm" path="res://scenes/inicio4-3.png" id="7_x83it"]
+[ext_resource type="Texture2D" uid="uid://c84quwt7qyeyu" path="res://scenes/inicio7.png" id="8_3dgso"]
+[ext_resource type="Texture2D" uid="uid://cpvu1r1as4j6a" path="res://scenes/inicio8.png" id="9_rybd4"]
+[ext_resource type="Texture2D" uid="uid://cifhgk661sxku" path="res://scenes/inicio9.png" id="10_v31s4"]
+
+[sub_resource type="Animation" id="Animation_ucri6"]
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3lj43"]
+_data = {
+"default": SubResource("Animation_ucri6")
+}
+
+[sub_resource type="Animation" id="Animation_xmq4y"]
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s04d6"]
+_data = {
+"default": SubResource("Animation_xmq4y")
+}
+
+[sub_resource type="Animation" id="Animation_p8xsx"]
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hjc1l"]
+_data = {
+"default": SubResource("Animation_p8xsx")
+}
+
+[sub_resource type="Animation" id="Animation_toi2j"]
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t6ies"]
+_data = {
+"default": SubResource("Animation_toi2j")
+}
+
+[sub_resource type="Animation" id="Animation_2gxk0"]
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a8wot"]
+_data = {
+"default": SubResource("Animation_2gxk0")
+}
+
+[sub_resource type="Animation" id="Animation_3myrv"]
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0ptm3"]
+_data = {
+"default": SubResource("Animation_3myrv")
+}
+
+[sub_resource type="Animation" id="Animation_lgjpx"]
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g1vlm"]
+_data = {
+"default": SubResource("Animation_lgjpx")
+}
+
+[sub_resource type="Animation" id="Animation_tb6re"]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xym1s"]
+_data = {
+"default": SubResource("Animation_tb6re")
+}
+
+[sub_resource type="Animation" id="Animation_tjnls"]
+length = 1.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cv2mp"]
+_data = {
+"default": SubResource("Animation_tjnls")
+}
+
+[node name="Opening" type="Node2D"]
+
+[node name="CutsceneManager" parent="." instance=ExtResource("1_f85ya")]
+position = Vector2(640, 432)
+
+[node name="Sprite2D" type="Sprite2D" parent="CutsceneManager"]
+visible = false
+texture_filter = 1
+texture = ExtResource("2_5r77a")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true
+}
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 0,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "AnimationPlayer",
+"slice": "",
+"source": "res://aseprite/intro/inicio1.aseprite"
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CutsceneManager/Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_3lj43")
+}
+autoplay = "default"
+
+[node name="Sprite2D2" type="Sprite2D" parent="CutsceneManager"]
+visible = false
+texture_filter = 1
+texture = ExtResource("3_u0xkp")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "CutsceneManager/Sprite2D2/AnimationPlayer",
+"slice": "",
+"source": "res://aseprite/intro/inicio2.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CutsceneManager/Sprite2D2"]
+libraries = {
+"": SubResource("AnimationLibrary_s04d6")
+}
+autoplay = "default"
+
+[node name="Sprite2D3" type="Sprite2D" parent="CutsceneManager"]
+visible = false
+texture_filter = 1
+texture = ExtResource("4_bug86")
+hframes = 2
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "CutsceneManager/Sprite2D3/AnimationPlayer",
+"slice": "",
+"source": "res://aseprite/intro/inicio3.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CutsceneManager/Sprite2D3"]
+libraries = {
+"": SubResource("AnimationLibrary_hjc1l")
+}
+autoplay = "default"
+
+[node name="Sprite2D4_1" type="Sprite2D" parent="CutsceneManager"]
+visible = false
+texture_filter = 1
+texture = ExtResource("5_8fwld")
+hframes = 2
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "CutsceneManager/Sprite2D4_1/AnimationPlayer",
+"slice": "",
+"source": "res://aseprite/intro/inicio4-1.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CutsceneManager/Sprite2D4_1"]
+libraries = {
+"": SubResource("AnimationLibrary_t6ies")
+}
+autoplay = "default"
+
+[node name="Sprite2D4_2" type="Sprite2D" parent="CutsceneManager"]
+visible = false
+texture_filter = 1
+texture = ExtResource("6_51u3k")
+hframes = 2
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "CutsceneManager/Sprite2D4_2/AnimationPlayer",
+"slice": "",
+"source": "res://aseprite/intro/inicio4-2.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CutsceneManager/Sprite2D4_2"]
+libraries = {
+"": SubResource("AnimationLibrary_t6ies")
+}
+autoplay = "default"
+
+[node name="Sprite2D4_3" type="Sprite2D" parent="CutsceneManager"]
+visible = false
+texture_filter = 1
+texture = ExtResource("7_x83it")
+hframes = 2
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "CutsceneManager/Sprite2D4_3/AnimationPlayer",
+"slice": "",
+"source": "res://aseprite/intro/inicio4-3.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CutsceneManager/Sprite2D4_3"]
+libraries = {
+"": SubResource("AnimationLibrary_t6ies")
+}
+autoplay = "default"
+
+[node name="Sprite2D5" type="Sprite2D" parent="CutsceneManager"]
+visible = false
+texture_filter = 1
+texture = ExtResource("6_1t0bi")
+hframes = 4
+vframes = 4
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "CutsceneManager/Sprite2D5/AnimationPlayer",
+"slice": "",
+"source": "res://aseprite/intro/inicio5.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CutsceneManager/Sprite2D5"]
+libraries = {
+"": SubResource("AnimationLibrary_a8wot")
+}
+autoplay = "default"
+
+[node name="Sprite2D6" type="Sprite2D" parent="CutsceneManager"]
+visible = false
+texture_filter = 1
+texture = ExtResource("7_3kf1c")
+hframes = 2
+vframes = 2
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "CutsceneManager/Sprite2D6/AnimationPlayer",
+"slice": "",
+"source": "res://aseprite/intro/inicio6.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CutsceneManager/Sprite2D6"]
+libraries = {
+"": SubResource("AnimationLibrary_0ptm3")
+}
+autoplay = "default"
+
+[node name="Sprite2D7" type="Sprite2D" parent="CutsceneManager"]
+visible = false
+texture_filter = 1
+texture = ExtResource("8_3dgso")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "CutsceneManager/Sprite2D7/AnimationPlayer",
+"slice": "",
+"source": "res://aseprite/intro/inicio7.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CutsceneManager/Sprite2D7"]
+libraries = {
+"": SubResource("AnimationLibrary_g1vlm")
+}
+autoplay = "default"
+
+[node name="Sprite2D8" type="Sprite2D" parent="CutsceneManager"]
+visible = false
+texture_filter = 1
+texture = ExtResource("9_rybd4")
+hframes = 2
+vframes = 2
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "CutsceneManager/Sprite2D8/AnimationPlayer",
+"slice": "",
+"source": "res://aseprite/intro/inicio8.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CutsceneManager/Sprite2D8"]
+libraries = {
+"": SubResource("AnimationLibrary_xym1s")
+}
+autoplay = "default"
+speed_scale = 0.3
+
+[node name="Sprite2D9" type="Sprite2D" parent="CutsceneManager"]
+texture_filter = 1
+texture = ExtResource("10_v31s4")
+hframes = 4
+vframes = 3
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "CutsceneManager/Sprite2D9/AnimationPlayer",
+"slice": "",
+"source": "res://aseprite/intro/inicio9.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CutsceneManager/Sprite2D9"]
+libraries = {
+"": SubResource("AnimationLibrary_cv2mp")
+}
+autoplay = "default"
