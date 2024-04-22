@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://bqdrt7oox6d1c" path="res://scenes/asteroid_hazard.tscn" id="9_hwwdu"]
 [ext_resource type="PackedScene" uid="uid://ba62prgnkj1lw" path="res://scenes/planet.tscn" id="10_vejue"]
 [ext_resource type="PackedScene" uid="uid://b4gt7stkwumbt" path="res://scenes/comet_spawner.tscn" id="11_phbya"]
-[ext_resource type="PackedScene" path="res://scenes/asteroid_small_hazard.tscn" id="12_hbve6"]
-[ext_resource type="PackedScene" path="res://scenes/ovni_spawner.tscn" id="13_835ar"]
+[ext_resource type="PackedScene" uid="uid://n7l4210ok7a3" path="res://scenes/asteroid_small_hazard.tscn" id="12_hbve6"]
+[ext_resource type="PackedScene" uid="uid://du5ko2cpsk1dp" path="res://scenes/ovni_spawner.tscn" id="13_835ar"]
 [ext_resource type="AudioStream" uid="uid://8dg2nwi0jxmm" path="res://assets/nivel.wav" id="14_x5vhb"]
 [ext_resource type="AudioStream" uid="uid://ceh52yex4mgy1" path="res://assets/META.mp3" id="15_eyk1q"]
 [ext_resource type="PackedScene" uid="uid://de8n4o0x6pjm7" path="res://scenes/SceneTransitionOld.tscn" id="16_iy0lx"]
@@ -28,8 +28,8 @@ script = ExtResource("1_sb0na")
 [node name="Player" parent="." instance=ExtResource("3_yw0aw")]
 position = Vector2(333, 413)
 
-[node name="Camera2D" parent="Player" node_paths=PackedStringArray("PlayerNode") instance=ExtResource("4_02gvm")]
-PlayerNode = NodePath("..")
+[node name="Camera2D" parent="Player" instance=ExtResource("4_02gvm")]
+position = Vector2(445, 2)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

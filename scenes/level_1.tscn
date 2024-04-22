@@ -7,11 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://cdt2egiu025pg" path="res://scenes/ui.tscn" id="4_n6avi"]
 [ext_resource type="PackedScene" uid="uid://dajifm4ulodf8" path="res://scenes/fondo_parallax.tscn" id="6_c4avk"]
 [ext_resource type="Texture2D" uid="uid://de25b7di0n6vj" path="res://scenes/planeta dia 1.png" id="6_y8rqf"]
-[ext_resource type="PackedScene" path="res://scenes/asteroid_small_hazard.tscn" id="8_eg5sl"]
+[ext_resource type="PackedScene" uid="uid://n7l4210ok7a3" path="res://scenes/asteroid_small_hazard.tscn" id="8_eg5sl"]
 [ext_resource type="PackedScene" uid="uid://ba62prgnkj1lw" path="res://scenes/planet.tscn" id="9_d2irk"]
 [ext_resource type="PackedScene" uid="uid://b4gt7stkwumbt" path="res://scenes/comet_spawner.tscn" id="10_drim8"]
 [ext_resource type="PackedScene" uid="uid://bqdrt7oox6d1c" path="res://scenes/asteroid_hazard.tscn" id="11_6mf4s"]
-[ext_resource type="PackedScene" path="res://scenes/ovni_spawner.tscn" id="12_kmtjv"]
+[ext_resource type="PackedScene" uid="uid://du5ko2cpsk1dp" path="res://scenes/ovni_spawner.tscn" id="12_kmtjv"]
 [ext_resource type="AudioStream" uid="uid://8dg2nwi0jxmm" path="res://assets/nivel.wav" id="13_1nfk6"]
 [ext_resource type="AudioStream" uid="uid://ceh52yex4mgy1" path="res://assets/META.mp3" id="14_5tbqn"]
 
@@ -27,6 +27,7 @@ script = ExtResource("1_va4bc")
 position = Vector2(442, 547)
 
 [node name="Camera2D" parent="Player" node_paths=PackedStringArray("PlayerNode") instance=ExtResource("3_5me2t")]
+position = Vector2(445, 2)
 PlayerNode = NodePath("..")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -153,9 +154,6 @@ position = Vector2(9389, 743)
 
 [node name="AsteroidHazard15" parent="." instance=ExtResource("11_6mf4s")]
 position = Vector2(9943, 244)
-
-[node name="OvniSpawner2" parent="." instance=ExtResource("12_kmtjv")]
-position = Vector2(174, 0)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
