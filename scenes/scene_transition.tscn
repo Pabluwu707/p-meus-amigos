@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccemqtpj36hm4"]
+[gd_scene load_steps=6 format=3 uid="uid://ccemqtpj36hm4"]
 
 [ext_resource type="Script" path="res://scenes/scene_transition.gd" id="1_uukq3"]
 
@@ -32,10 +32,14 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_2btpo"]
+resource_name = "fade_slow"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jpqru"]
 _data = {
 "RESET": SubResource("Animation_uuba2"),
-"fade": SubResource("Animation_o2wmg")
+"fade": SubResource("Animation_o2wmg"),
+"fade_slow": SubResource("Animation_2btpo")
 }
 
 [node name="SceneTransition" type="CanvasLayer"]
@@ -46,7 +50,9 @@ level1 = "res://scenes/level_2.tscn"
 level2 = "res://scenes/level_3.tscn"
 level3 = "res://scenes/level4.tscn"
 menu = "res://scenes/menu.tscn"
-ending = "res://scenes/level_intro.tscn"
+goodending = "res://scenes/goodending.tscn"
+badending = "res://scenes/badending.tscn"
+start = "res://scenes/level_intro.tscn"
 
 [node name="dissolve_rect" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)

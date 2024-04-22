@@ -1,6 +1,7 @@
 extends Node
 
 @onready var animaflecha := $"Selector movil/AnimationPlayer"
+@onready var dinero := $DineroDisplay/DineroDisplayTexto
 
 var escenabotonfacil = preload("res://scenes/boton_facil.tscn")
 var escenabotonmedio = preload("res://scenes/boton_normal.tscn")
@@ -16,8 +17,12 @@ var selected = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var text = "DÍA %s"
-	diatexto.text = text % str(Global.dia+1)
+	if (Global.dia == 3):
+		diatexto.text = "ÚLTIMO DÍA"
+	else:
+		var text = "DÍA %s"
+		diatexto.text = text % str(Global.dia+1)
+	dinero.text = str(Global.current_dinero)
 	setup_botones()
 
 

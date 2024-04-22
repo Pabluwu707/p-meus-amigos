@@ -1,0 +1,124 @@
+[gd_scene load_steps=8 format=3 uid="uid://cd23qib8bmsfe"]
+
+[ext_resource type="Script" path="res://scenes/badending.gd" id="1_1g18r"]
+[ext_resource type="Texture2D" uid="uid://oirickfd637r" path="res://scenes/finalmalocompleto.png" id="2_obqw4"]
+[ext_resource type="FontFile" uid="uid://bgl1s21hnm7pb" path="res://assets/PressStart2P-Regular.ttf" id="3_oul7x"]
+[ext_resource type="Texture2D" uid="uid://cfi5lrcpxwd4v" path="res://assets/espacio.png" id="4_wsdk2"]
+
+[sub_resource type="Animation" id="Animation_lq0p1"]
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_5ygkq"]
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [12, 13]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_poet6"]
+_data = {
+"1": SubResource("Animation_lq0p1"),
+"2": SubResource("Animation_5ygkq")
+}
+
+[node name="Bad ending" type="CanvasLayer"]
+script = ExtResource("1_1g18r")
+
+[node name="Animacion" type="Node2D" parent="."]
+position = Vector2(634, 391)
+
+[node name="Sprite2D" type="Sprite2D" parent="Animacion"]
+texture_filter = 1
+texture = ExtResource("2_obqw4")
+hframes = 4
+vframes = 4
+frame = 12
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "Animacion/AnimationPlayer",
+"slice": "",
+"source": "res://aseprite/finalmalocompleto.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Animacion"]
+libraries = {
+"": SubResource("AnimationLibrary_poet6")
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.117647, 0, 0.180392, 1)
+
+[node name="TextoEnding" type="Label" parent="."]
+offset_left = 187.0
+offset_top = 733.0
+offset_right = 1174.0
+offset_bottom = 2262.0
+theme_override_fonts/font = ExtResource("3_oul7x")
+theme_override_font_sizes/font_size = 28
+text = "TEXTO"
+autowrap_mode = 2
+
+[node name="Espacio" type="Sprite2D" parent="."]
+position = Vector2(1162, 909)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_wsdk2")
