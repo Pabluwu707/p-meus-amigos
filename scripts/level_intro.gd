@@ -26,4 +26,5 @@ func _on_area_2d_body_entered(body):
 
 func _on_next_scene_timet_timeout():
 	%AudioStreamPlayer.stop()
+	SceneTransition.to_menu()
 	# HACER AQUÍ LA SIGUIENTE ESCENA

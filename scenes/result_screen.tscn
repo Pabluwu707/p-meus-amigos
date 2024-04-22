@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbix4cc5kifym"]
+[gd_scene load_steps=5 format=3 uid="uid://dbix4cc5kifym"]
 
 [ext_resource type="Script" path="res://scripts/result_screen.gd" id="1_mx75s"]
 [ext_resource type="Texture2D" uid="uid://bhwj12cq4qfqu" path="res://scenes/pop up resultados.png" id="2_jyorx"]
 [ext_resource type="FontFile" uid="uid://bgl1s21hnm7pb" path="res://assets/PressStart2P-Regular.ttf" id="3_slk8o"]
+[ext_resource type="Texture2D" uid="uid://cfi5lrcpxwd4v" path="res://assets/espacio.png" id="4_bhe16"]
 
 [node name="ResultScreen" type="Node2D"]
 script = ExtResource("1_mx75s")
@@ -104,3 +105,8 @@ autowrap_mode = 2
 [node name="PortraitPlace" type="Node2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(400, 74)
+
+[node name="Espacio" type="Sprite2D" parent="."]
+position = Vector2(-181, 333)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_bhe16")

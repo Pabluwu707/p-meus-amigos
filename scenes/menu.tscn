@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b55axlwoa1ire"]
+[gd_scene load_steps=15 format=3 uid="uid://b55axlwoa1ire"]
 
 [ext_resource type="Script" path="res://scenes/menu.gd" id="1_mup3p"]
 [ext_resource type="PackedScene" uid="uid://dajifm4ulodf8" path="res://scenes/fondo_parallax.tscn" id="1_wyvaq"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c304jt0mj0dbi" path="res://scenes/misiones_boton.png" id="4_tnsp4"]
 [ext_resource type="Texture2D" uid="uid://ckkod2rfgsar" path="res://scenes/astronauta menu.png" id="5_8qd8y"]
 [ext_resource type="FontFile" uid="uid://bgl1s21hnm7pb" path="res://assets/PressStart2P-Regular.ttf" id="6_tparf"]
+[ext_resource type="Texture2D" uid="uid://cfi5lrcpxwd4v" path="res://assets/espacio.png" id="7_dgjkh"]
 
 [sub_resource type="Animation" id="Animation_3d7oj"]
 length = 0.9
@@ -266,5 +267,11 @@ theme_override_fonts/font = ExtResource("6_tparf")
 theme_override_font_sizes/font_size = 70
 text = "DÍA 1"
 horizontal_alignment = 1
+
+[node name="Espacio" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(1114, 923)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_dgjkh")
 
 [editable path="Fondo Parallax"]

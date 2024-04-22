@@ -46,6 +46,7 @@ level1 = "res://scenes/level_2.tscn"
 level2 = "res://scenes/level_3.tscn"
 level3 = "res://scenes/level4.tscn"
 menu = "res://scenes/menu.tscn"
+ending = "res://scenes/level_intro.tscn"
 
 [node name="dissolve_rect" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)
