@@ -1,19 +1,11 @@
 extends Node2D
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func setup_boton(nombrealien, nombrepaquete, imagenpaquete, dificultad, recompensa):
 	%NombreAlien.text = nombrealien
 	%NombrePaquete.text = nombrepaquete
-	#%ImagenPaquete.texture = imagenpaquete
+	var imagen = load("res://scenes/alien/" + imagenpaquete +  ".tscn").instantiate()
+	add_child(imagen)
+	imagen.position = Vector2(1027,610)
 	if (dificultad == 5):
 		%Dificultad.text = "ROBUSTO(♥♥♥♥♥)"
 	elif (dificultad == 4):

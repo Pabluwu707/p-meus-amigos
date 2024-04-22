@@ -5,13 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://0rthx7bvralu" path="res://scenes/player.tscn" id="2_k1qyv"]
 [ext_resource type="PackedScene" uid="uid://p2sud2l3qm5l" path="res://scenes/camera_2d.tscn" id="3_5me2t"]
 [ext_resource type="PackedScene" uid="uid://cdt2egiu025pg" path="res://scenes/ui.tscn" id="4_n6avi"]
-[ext_resource type="PackedScene" path="res://scenes/fondo_parallax.tscn" id="6_c4avk"]
+[ext_resource type="PackedScene" uid="uid://dajifm4ulodf8" path="res://scenes/fondo_parallax.tscn" id="6_c4avk"]
 [ext_resource type="Texture2D" uid="uid://de25b7di0n6vj" path="res://scenes/planeta dia 1.png" id="6_y8rqf"]
-[ext_resource type="PackedScene" uid="uid://n7l4210ok7a3" path="res://scenes/asteroid_small_hazard.tscn" id="8_eg5sl"]
+[ext_resource type="PackedScene" path="res://scenes/asteroid_small_hazard.tscn" id="8_eg5sl"]
 [ext_resource type="PackedScene" uid="uid://ba62prgnkj1lw" path="res://scenes/planet.tscn" id="9_d2irk"]
 [ext_resource type="PackedScene" uid="uid://b4gt7stkwumbt" path="res://scenes/comet_spawner.tscn" id="10_drim8"]
 [ext_resource type="PackedScene" uid="uid://bqdrt7oox6d1c" path="res://scenes/asteroid_hazard.tscn" id="11_6mf4s"]
-[ext_resource type="PackedScene" uid="uid://du5ko2cpsk1dp" path="res://scenes/ovni_spawner.tscn" id="12_kmtjv"]
+[ext_resource type="PackedScene" path="res://scenes/ovni_spawner.tscn" id="12_kmtjv"]
 [ext_resource type="AudioStream" uid="uid://8dg2nwi0jxmm" path="res://assets/nivel.wav" id="13_1nfk6"]
 [ext_resource type="AudioStream" uid="uid://ceh52yex4mgy1" path="res://assets/META.mp3" id="14_5tbqn"]
 
@@ -24,7 +24,7 @@ script = ExtResource("1_va4bc")
 [node name="LevelController" parent="." instance=ExtResource("1_bard0")]
 
 [node name="Player" parent="." instance=ExtResource("2_k1qyv")]
-position = Vector2(444, 454)
+position = Vector2(442, 547)
 
 [node name="Camera2D" parent="Player" node_paths=PackedStringArray("PlayerNode") instance=ExtResource("3_5me2t")]
 PlayerNode = NodePath("..")
@@ -107,19 +107,19 @@ position = Vector2(8799, 369)
 position = Vector2(9722, 375)
 
 [node name="AsteroidHazard6" parent="." instance=ExtResource("11_6mf4s")]
-position = Vector2(5105, 841)
+position = Vector2(4947, 807)
 
 [node name="AsteroidHazard7" parent="." instance=ExtResource("11_6mf4s")]
-position = Vector2(4045, 594)
+position = Vector2(3278, 240)
 
 [node name="OvniSpawner" parent="." instance=ExtResource("12_kmtjv")]
 position = Vector2(6385, -2)
 
 [node name="AsteroidHazard5" parent="." instance=ExtResource("8_eg5sl")]
-position = Vector2(4179, 130)
+position = Vector2(3676, 484)
 
 [node name="AsteroidHazard8" parent="." instance=ExtResource("8_eg5sl")]
-position = Vector2(4889, 414)
+position = Vector2(4171, 363)
 
 [node name="AsteroidHazard12" parent="." instance=ExtResource("8_eg5sl")]
 position = Vector2(8546, 376)

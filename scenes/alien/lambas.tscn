@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://daueh74xi4yvh"]
+
+[ext_resource type="Texture2D" uid="uid://br0f8hg50uc6b" path="res://scenes/alien/lambas.png" id="1_fego6"]
+
+[node name="Lambas" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_fego6")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://aseprite/aliens/lambas.aseprite"
+}

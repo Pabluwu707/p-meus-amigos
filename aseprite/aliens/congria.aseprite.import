@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://b8wbdxux3l8lk"
+path="res://.godot/imported/congria.aseprite-38d93f9e24f09544089eea066306b9cc.res"
+
+[deps]
+
+source_file="res://aseprite/aliens/congria.aseprite"
+dest_files=["res://.godot/imported/congria.aseprite-38d93f9e24f09544089eea066306b9cc.res"]
+
+[params]
+

@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://d5q56anigxtb"]
+
+[ext_resource type="Texture2D" uid="uid://b5mi82va1i55g" path="res://scenes/alien/rajoypedido.png" id="1_c6b70"]
+
+[node name="Rajoypedido" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_c6b70")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://aseprite/aliens/rajoypedido.aseprite"
+}
