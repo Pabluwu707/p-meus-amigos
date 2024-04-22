@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" path="res://scenes/ovni_spawner.tscn" id="13_835ar"]
 [ext_resource type="AudioStream" uid="uid://8dg2nwi0jxmm" path="res://assets/nivel.wav" id="14_x5vhb"]
 [ext_resource type="AudioStream" uid="uid://ceh52yex4mgy1" path="res://assets/META.mp3" id="15_eyk1q"]
-[ext_resource type="PackedScene" uid="uid://de8n4o0x6pjm7" path="res://scenes/SceneTransition.tscn" id="16_iy0lx"]
+[ext_resource type="PackedScene" uid="uid://de8n4o0x6pjm7" path="res://scenes/SceneTransitionOld.tscn" id="16_iy0lx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ux5u"]
 size = Vector2(164, 1029)
@@ -40,7 +40,7 @@ Meta = NodePath("../../Meta")
 [node name="Hazards" type="Node2D" parent="."]
 
 [node name="Meta" type="Node2D" parent="."]
-position = Vector2(10494, 479)
+position = Vector2(694, 479)
 
 [node name="Area2D" type="Area2D" parent="Meta"]
 
@@ -156,4 +156,5 @@ volume_db = -10.0
 
 [node name="SceneTransition" parent="." instance=ExtResource("16_iy0lx")]
 
+[connection signal="body_entered" from="Meta/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Meta/Area2D" to="Player" method="_on_area_2d_body_entered"]

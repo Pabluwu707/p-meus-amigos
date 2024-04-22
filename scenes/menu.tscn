@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://b55axlwoa1ire"]
+[gd_scene load_steps=14 format=3 uid="uid://b55axlwoa1ire"]
 
 [ext_resource type="Script" path="res://scenes/menu.gd" id="1_mup3p"]
 [ext_resource type="PackedScene" uid="uid://dajifm4ulodf8" path="res://scenes/fondo_parallax.tscn" id="1_wyvaq"]
 [ext_resource type="Texture2D" uid="uid://br280p0hwk087" path="res://scenes/misiones_fondo.png" id="2_jhec1"]
 [ext_resource type="Texture2D" uid="uid://c304jt0mj0dbi" path="res://scenes/misiones_boton.png" id="4_tnsp4"]
-[ext_resource type="PackedScene" uid="uid://de8n4o0x6pjm7" path="res://scenes/SceneTransition.tscn" id="5_4ukx6"]
+[ext_resource type="Texture2D" uid="uid://ckkod2rfgsar" path="res://scenes/astronauta menu.png" id="5_8qd8y"]
+[ext_resource type="FontFile" uid="uid://bgl1s21hnm7pb" path="res://assets/PressStart2P-Regular.ttf" id="6_tparf"]
 
 [sub_resource type="Animation" id="Animation_3d7oj"]
 length = 0.9
@@ -126,6 +127,39 @@ _data = {
 "default": SubResource("Animation_4y2lf")
 }
 
+[sub_resource type="Animation" id="Animation_5x6g7"]
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_drdew"]
+_data = {
+"default": SubResource("Animation_5x6g7")
+}
+
 [node name="Menu" type="Node"]
 script = ExtResource("1_mup3p")
 
@@ -187,10 +221,50 @@ libraries = {
 }
 autoplay = "1"
 
-[node name="SceneTransition" parent="." instance=ExtResource("5_4ukx6")]
-level0 = "res://scenes/level_1.tscn"
-level1 = "res://scenes/level_2.tscn"
-level2 = "res://scenes/level_3.tscn"
-level3 = "res://scenes/level4.tscn"
+[node name="Dolly" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Dolly"]
+texture_filter = 1
+position = Vector2(266, 555)
+texture = ExtResource("5_8qd8y")
+hframes = 2
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 0,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "Dolly/AnimationPlayer",
+"slice": "",
+"source": "res://aseprite/astronauta menu.aseprite"
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Dolly"]
+libraries = {
+"": SubResource("AnimationLibrary_drdew")
+}
+autoplay = "default"
+
+[node name="EligeTexto" type="Label" parent="."]
+offset_left = 542.0
+offset_top = 254.0
+offset_right = 1190.0
+offset_bottom = 290.0
+theme_override_fonts/font = ExtResource("6_tparf")
+theme_override_font_sizes/font_size = 30
+text = "¡ELIGE UN ENCARGO!"
+horizontal_alignment = 1
+
+[node name="DiaTexto" type="Label" parent="."]
+offset_left = 538.0
+offset_top = 54.0
+offset_right = 1186.0
+offset_bottom = 90.0
+theme_override_fonts/font = ExtResource("6_tparf")
+theme_override_font_sizes/font_size = 70
+text = "DÍA 1"
+horizontal_alignment = 1
 
 [editable path="Fondo Parallax"]

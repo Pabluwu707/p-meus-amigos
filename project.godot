@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="pMeusAmigos"
-run/main_scene="res://scenes/level_base.tscn"
+run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icono.png"
 
 [autoload]
 
 Global="*res://Global.gd"
+SceneTransition="*res://scenes/scene_transition.tscn"
 
 [display]
 

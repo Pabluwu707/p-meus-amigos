@@ -1,7 +1,6 @@
 extends Node
 
 @onready var animaflecha := $"Selector movil/AnimationPlayer"
-@onready var SceneTransition := $SceneTransition
 
 var escenabotonfacil = preload("res://scenes/boton_facil.tscn")
 var escenabotonmedio = preload("res://scenes/boton_normal.tscn")
@@ -13,9 +12,12 @@ var misiondificil
 
 var selected = 1
 
+@onready var diatexto = $DiaTexto
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var text = "DÍA %s"
+	diatexto.text = text % str(Global.dia+1)
 	setup_botones()
 
 
@@ -47,23 +49,24 @@ func _input(event):
 					print("Cargar nivel dificil")
 					Global.current_mision = misiondificil
 					SceneTransition.to_level()
+	else:
+		if (event.is_action_pressed("spacebar")):
+			print("Cargar nivel facil")
+			Global.current_mision = misionfacil
+			SceneTransition.to_level()
 					
-
 func setup_botones():
 	var dia = Global.dia
 	if (dia == 0):
 		var n = 0
-		misionnormal = Global.misiones_facil[n]
-		while true:
-			if (misionnormal.nombre_alien == "Melvin"):
-				break
-			else:
-				n = n+1
-				misionnormal = Global.misiones_facil[n]
+		misionfacil = Global.mision_tutorial
 		
 		var boton = escenabotonfacil.instantiate()
-		boton.setup_boton(misionnormal.nombre_alien, misionnormal.nombre_paquete, misionnormal.imagen_paquete, misionnormal.dificultad, misionnormal.recompensa)
+		boton.setup_boton(misionfacil.nombre_alien, misionfacil.nombre_paquete, misionfacil.imagen_paquete, misionfacil.dificultad, misionfacil.recompensa)
 		add_child(boton)
+		
+		selected = 0
+		animaflecha.play("0")
 		
 	else:
 		
@@ -72,6 +75,7 @@ func setup_botones():
 		while true:
 			if (misionfacil.usado == false):
 				# print("Encontrado uno sin usar")
+				Global.misiones_facil[nf].usado = true
 				break
 			else:
 				nf = nf+1
@@ -85,6 +89,7 @@ func setup_botones():
 		misionnormal = Global.misiones_normal[nn]
 		while true:
 			if (misionnormal.usado == false):
+				Global.misiones_normal[nn].usado = true
 				# print("Encontrado uno sin usar")
 				break
 			else:
@@ -99,11 +104,12 @@ func setup_botones():
 		while true:
 			if (misiondificil.usado == false):
 				# print("Encontrado uno sin usar")
+				Global.misiones_dificil[nd].usado = true
 				break
 			else:
 				nd = nd + 1
 				misiondificil = Global.misiones_dificil[nd]
-				
+
 		var botond = escenabotondificil.instantiate()
 		botond.setup_boton(misiondificil.nombre_alien, misiondificil.nombre_paquete, misiondificil.imagen_paquete, misiondificil.dificultad, misiondificil.recompensa)
 		add_child(botond)

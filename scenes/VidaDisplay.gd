@@ -14,6 +14,9 @@ func setup_vida(maxlife):
 		array_corazones.push_back(instance)
 		instance.position = Vector2(220+(n*80),107)
 		add_child(instance)
+	var imagen = load("res://scenes/alien/" + Global.current_mision.imagen_paquete +  ".tscn").instantiate()
+	imagen.position = Vector2(85,115)
+	add_child(imagen)
 
 func change_vida(value):
 	if(num_vidas > 0):
