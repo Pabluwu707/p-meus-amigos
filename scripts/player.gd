@@ -74,6 +74,7 @@ func on_knockback():
 		visible = false
 		invencible = true
 		player_collisions_with_hazard.emit()
+		Global.current_veces_dano = Global.current_veces_dano + 1
 		%Damage.play()
 		
 	in_knockback = true

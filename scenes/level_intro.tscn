@@ -137,7 +137,7 @@ texture = ExtResource("2_mcccp")
 [node name="Fondo Parallax" parent="." instance=ExtResource("3_n0ud4")]
 
 [node name="Camera2D" parent="." instance=ExtResource("4_xu1jq")]
-position = Vector2(534, 413)
+position = Vector2(534, 427)
 
 [node name="AsteroidHazard" parent="." instance=ExtResource("5_43mx6")]
 position = Vector2(1168, 88)
@@ -172,7 +172,8 @@ metadata/_aseprite_wizard_interface_config_ = {
 
 [node name="ColorRect" type="ColorRect" parent="."]
 unique_name_in_owner = true
-offset_right = 1292.0
+offset_left = -108.0
+offset_right = 1184.0
 offset_bottom = 961.0
 color = Color(0, 0, 0, 1)
 

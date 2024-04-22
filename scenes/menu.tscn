@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b55axlwoa1ire"]
+[gd_scene load_steps=19 format=3 uid="uid://b55axlwoa1ire"]
 
 [ext_resource type="Script" path="res://scenes/menu.gd" id="1_mup3p"]
 [ext_resource type="PackedScene" uid="uid://dajifm4ulodf8" path="res://scenes/fondo_parallax.tscn" id="1_wyvaq"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://c304jt0mj0dbi" path="res://scenes/misiones_boton.png" id="4_tnsp4"]
 [ext_resource type="Texture2D" uid="uid://ckkod2rfgsar" path="res://scenes/astronauta menu.png" id="5_8qd8y"]
 [ext_resource type="FontFile" uid="uid://bgl1s21hnm7pb" path="res://assets/PressStart2P-Regular.ttf" id="6_tparf"]
+[ext_resource type="Texture2D" uid="uid://cfi5lrcpxwd4v" path="res://assets/espacio.png" id="7_dgjkh"]
+[ext_resource type="Texture2D" uid="uid://dscnfrpyce7ni" path="res://scenes/contador_dinero.png" id="8_0ka3o"]
+[ext_resource type="Script" path="res://scripts/DineroDisplay.gd" id="9_4130t"]
 
 [sub_resource type="Animation" id="Animation_3d7oj"]
 length = 0.9
@@ -160,6 +163,12 @@ _data = {
 "default": SubResource("Animation_5x6g7")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_snn2k"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jffta"]
+bg_color = Color(0.415686, 0.690196, 0, 1)
+
 [node name="Menu" type="Node"]
 script = ExtResource("1_mup3p")
 
@@ -258,13 +267,75 @@ text = "¡ELIGE UN ENCARGO!"
 horizontal_alignment = 1
 
 [node name="DiaTexto" type="Label" parent="."]
-offset_left = 538.0
-offset_top = 54.0
-offset_right = 1186.0
-offset_bottom = 90.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -324.0
+offset_top = 43.0
+offset_right = 324.0
+offset_bottom = 113.0
+grow_horizontal = 2
+size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("6_tparf")
 theme_override_font_sizes/font_size = 70
 text = "DÍA 1"
 horizontal_alignment = 1
+
+[node name="Espacio" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(1114, 923)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_dgjkh")
+
+[node name="DineroDisplay" type="Node2D" parent="."]
+position = Vector2(0, -27)
+
+[node name="FondoDinero" type="Sprite2D" parent="DineroDisplay"]
+texture_filter = 1
+position = Vector2(1133, 95)
+texture = ExtResource("8_0ka3o")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "",
+"slice": "",
+"source": "res://aseprite/contador_dinero.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true
+}
+
+[node name="Basura" type="TextEdit" parent="DineroDisplay"]
+visible = false
+offset_left = 1062.0
+offset_top = 79.0
+offset_right = 1158.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_tparf")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_snn2k")
+theme_override_styles/focus = SubResource("StyleBoxFlat_jffta")
+text = "001"
+editable = false
+
+[node name="DineroDisplayTexto" type="Label" parent="DineroDisplay"]
+offset_left = 1065.0
+offset_top = 73.0
+offset_right = 1257.0
+offset_bottom = 132.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_tparf")
+theme_override_font_sizes/font_size = 26
+text = "001"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("9_4130t")
 
 [editable path="Fondo Parallax"]

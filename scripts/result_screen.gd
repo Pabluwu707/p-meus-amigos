@@ -1,10 +1,10 @@
 extends Node2D
 
-func on_create(alien: String, reward, damage, sentence, portrait):
+func on_create(alien: String, reward, damage, total, sentence, portrait):
 	%Name.text = alien
 	%Reward.text = str(reward)
 	%Damage.text = str(damage)
-	%Total.text = str(int(reward) - int(damage))
+	%Total.text = str(total)
 	%Sentence.text = sentence
 	var portrait_node = load("res://scenes/alien/" + portrait +  ".tscn").instantiate()
 	add_child(portrait_node)

@@ -44,14 +44,15 @@ func _on_area_2d_body_entered(body):
 	
 	var name_alien = Global.current_mision.nombre_alien
 	var reward = Global.current_mision.recompensa
-	var damage = Global.current_veces_dano 
+	var damage = (int(Global.current_veces_dano) * (int(Global.current_mision.recompensa) / int(Global.current_mision.dificultad))) / 2
+	var total = int(reward) - int(damage)
 	var frase = Global.current_mision.mensaje
 	var sprite = Global.current_mision.imagen_alien
 	var resultados = load("res://scenes/result_screen.tscn").instantiate()
-	resultados.on_create(name_alien, reward, damage, frase, sprite)
+	resultados.on_create(name_alien, reward, damage, total, frase, sprite)
 	resultados.position = Vector2(650, 490)
 	ui.add_child(resultados)
 	
 	level_completed = true
-	
+	Global.current_dinero = Global.current_dinero + total
 	
