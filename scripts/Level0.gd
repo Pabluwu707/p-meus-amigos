@@ -15,8 +15,8 @@ func _process(delta):
 func _ready():
 	print("COMIENZA")
 	%AudioStreamPlayer.play()
-	game_controller.setup_level(Global.current_max_vida,Global.current_dinero)
-	ui.setup_ui(Global.current_max_vida,Global.current_dinero, player.get_position().x)
+	game_controller.setup_level(Global.current_mision.dificultad,Global.current_dinero)
+	ui.setup_ui(Global.current_mision.dificultad,Global.current_dinero, player.get_position().x)
 	_connect_player_damage()
 
 

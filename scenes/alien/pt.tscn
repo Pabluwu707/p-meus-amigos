@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://2iqj1a5pyoh3"]
+
+[ext_resource type="Texture2D" uid="uid://ck6r34btibdy7" path="res://scenes/alien/PT.png" id="1_3icec"]
+
+[node name="Pt" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_3icec")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://aseprite/aliens/PT.aseprite"
+}

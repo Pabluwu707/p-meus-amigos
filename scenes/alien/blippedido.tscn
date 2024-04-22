@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqk2av4p06m2b"]
+
+[ext_resource type="Texture2D" uid="uid://d3nqcb1d2j2xc" path="res://scenes/alien/blippedido.png" id="1_okkym"]
+
+[node name="Blippedido" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_okkym")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://aseprite/aliens/blippedido.aseprite"
+}

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dupmr2po3t7ks"
+path="res://.godot/imported/melvin.aseprite-8e20065f4568dc64a8f8ee51e81cf0a4.res"
+
+[deps]
+
+source_file="res://aseprite/aliens/melvin.aseprite"
+dest_files=["res://.godot/imported/melvin.aseprite-8e20065f4568dc64a8f8ee51e81cf0a4.res"]
+
+[params]
+

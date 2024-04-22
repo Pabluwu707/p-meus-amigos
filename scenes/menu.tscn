@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://b55axlwoa1ire"]
 
 [ext_resource type="Script" path="res://scenes/menu.gd" id="1_mup3p"]
-[ext_resource type="PackedScene" path="res://scenes/fondo_parallax.tscn" id="1_wyvaq"]
+[ext_resource type="PackedScene" uid="uid://dajifm4ulodf8" path="res://scenes/fondo_parallax.tscn" id="1_wyvaq"]
 [ext_resource type="Texture2D" uid="uid://br280p0hwk087" path="res://scenes/misiones_fondo.png" id="2_jhec1"]
 [ext_resource type="Texture2D" uid="uid://c304jt0mj0dbi" path="res://scenes/misiones_boton.png" id="4_tnsp4"]
 [ext_resource type="PackedScene" uid="uid://de8n4o0x6pjm7" path="res://scenes/SceneTransition.tscn" id="5_4ukx6"]

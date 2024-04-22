@@ -3,37 +3,36 @@ extends Node
 
 var dia : int = 2
 var current_dinero : int = 0
-var current_max_vida : int = 5
-var current_recompensa : int = 0
+var current_mision
 
 
 var misiones_facil = [
 	{
 		nombre_alien = "Melvin",
-		imagen_alien = "",
+		imagen_alien = "melvin",
 		nombre_paquete = "Pistola de rayos",
-		imagen_paquete = "",
-		mensaje="Me encantan los mensajes por defecto.",
+		imagen_paquete = "melvinpedido",
+		mensaje="Tienes lo que hay que tener para enviar encargos. Mucho ánimo, te espera una semana movidita.",
 		dificultad = 5,
 		recompensa = "50",
 		usado = true
 	},
 	{
 		nombre_alien = "Blirg Brap",
-		imagen_alien = "",
+		imagen_alien = "blip",
 		nombre_paquete = "Mono de trabajo",
-		imagen_paquete = "",
-		mensaje="I love stomping... KOOPAS",
+		imagen_paquete = "blippedido",
+		mensaje="I love stomping on... KOOPAS! Este pequeño me ayudará en mi próxima interpretación.",
 		dificultad = 4,
 		recompensa = "150",
 		usado = true
 	},
 	{
 		nombre_alien = "Lambdas y Digammas",
-		imagen_alien = "",
+		imagen_alien = "lambas",
 		nombre_paquete = "Ídolo ominoso",
-		imagen_paquete = "",
-		mensaje="Me encantan los mensajes por defecto.",
+		imagen_paquete = "lambaspedido",
+		mensaje="Con la llegada de este omen, el ritual queda completo.",
 		dificultad = 5,
 		recompensa = "100",
 		usado = false
@@ -42,20 +41,20 @@ var misiones_facil = [
 var misiones_normal = [
 	{
 		nombre_alien = "Marciano Rajoy",
-		imagen_alien = "",
+		imagen_alien = "rajoy",
 		nombre_paquete = "Cassata lunar",
-		imagen_paquete = "",
-		mensaje="Me encantan los mensajes por defecto.",
+		imagen_paquete = "rajoypedido",
+		mensaje="Buenas gracias y muchas noches. *procede a succionar el helado violentamente*",
 		dificultad = 3,
 		recompensa = "150",
 		usado = true
 	},
 	{
 		nombre_alien = "Xokulon",
-		imagen_alien = "",
+		imagen_alien = "xokulon",
 		nombre_paquete = "Comida congelada",
-		mensaje="No tienes ni puta idea de enviar a domilicio. ",
-		imagen_paquete = "",
+		imagen_paquete = "xokulonpedido",
+		mensaje="No tienes ni puta idea de enviar a domilicio. Tienes que aprender de un experto como yo. Fuera de aquí, que tengo que comer.",
 		dificultad = 3,
 		recompensa = "150",
 		usado = false
@@ -64,20 +63,20 @@ var misiones_normal = [
 var misiones_dificil = [
 	{
 		nombre_alien = "Congria",
-		imagen_alien = "",
+		imagen_alien = "congria",
 		nombre_paquete = "Ramo de violetas",
-		imagen_paquete = "",
-		mensaje="Me encantan los mensajes por defecto.",
+		imagen_paquete = "congriapedido",
+		mensaje="¿Un ramo de flores? ¿Para mí? ¡Ay, lagarta! ¡Que ya tengo novia!",
 		dificultad = 2,
 		recompensa = "200",
 		usado = false
 	},
 	{
 		nombre_alien = "P.T.",
-		imagen_alien = "",
-		nombre_paquete = "Cargamento totalmente legal",
-		imagen_paquete = "",
-		mensaje="Me encantan los mensajes por defecto.",
+		imagen_alien = "pt",
+		nombre_paquete = "Cargamento sospechoso",
+		imagen_paquete = "ptpedido",
+		mensaje="hostia puta un astronauta en bicicleta......",
 		dificultad = 2,
 		recompensa = "250",
 		usado = false

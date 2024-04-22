@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://cauh78e3l4a4a"]
+
+[ext_resource type="Texture2D" uid="uid://snn76c1t3jh2" path="res://scenes/alien/melvinpedido.png" id="1_8mywi"]
+
+[node name="Melvinpedido" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_8mywi")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://aseprite/aliens/melvinpedido.aseprite"
+}
