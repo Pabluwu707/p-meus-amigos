@@ -5,7 +5,7 @@ extends CanvasLayer
 
 var dinero = 0
 var frase1 = "Con %s Euros Espaciales en la cartera, corres a la tienda de juegos..."
-var frase2 = "El dinero no te llegaba para pillarte la Wii Universe, pero al menos te llevas unas pipas. Vuelve a intentarlo otro día... BAD ENDING"
+var frase2 = "El dinero no te llegaba para pillarte la Wii Universe, pero al menos te llevas unas pipas. Vuelve a intentarlo otro día...\n\nBAD ENDING"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

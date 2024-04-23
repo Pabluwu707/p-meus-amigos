@@ -8,7 +8,7 @@ func _ready():
 func setup_dinero(dinero):
 	# de normal cambiariamos la animacion y ya, como estamos de debug cambio el texto
 	print("Establecemos vida inicial")
-	text = str(dinero)
+	text = str(dinero,"/350")
 	
 func change_dinero(new_dinero):
 	# de normal cambiariamos la animacion y ya, como estamos de debug cambio el texto

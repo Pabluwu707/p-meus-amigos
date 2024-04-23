@@ -229,14 +229,14 @@ text = "001"
 editable = false
 
 [node name="DineroDisplayTexto" type="Label" parent="DineroDisplay"]
-offset_left = 1065.0
-offset_top = 73.0
-offset_right = 1257.0
-offset_bottom = 132.0
+offset_left = 1049.0
+offset_top = 72.0
+offset_right = 1241.0
+offset_bottom = 131.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("11_xh4k4")
-theme_override_font_sizes/font_size = 26
-text = "001"
+theme_override_font_sizes/font_size = 19
+text = "001/350"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("3_ik1ct")

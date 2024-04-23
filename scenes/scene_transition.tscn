@@ -50,6 +50,7 @@ level1 = "res://scenes/level_2.tscn"
 level2 = "res://scenes/level_3.tscn"
 level3 = "res://scenes/level4.tscn"
 menu = "res://scenes/menu.tscn"
+opening = "res://scenes/opening.tscn"
 goodending = "res://scenes/goodending.tscn"
 badending = "res://scenes/badending.tscn"
 start = "res://scenes/level_intro.tscn"
@@ -62,7 +63,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0.117647, 0.117647, 0.117647, 1)
+color = Color(0.0901961, 0.0901961, 0.0901961, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -1,6 +1,6 @@
-[gd_scene load_steps=31 format=3 uid="uid://cfs8xwcxo6cc"]
+[gd_scene load_steps=33 format=3 uid="uid://damqwbqp64niq"]
 
-[ext_resource type="PackedScene" uid="uid://bn8agm3ycnyxy" path="res://scenes/cutscene_manager.tscn" id="1_f85ya"]
+[ext_resource type="PackedScene" path="res://scenes/cutscene_manager.tscn" id="1_f85ya"]
 [ext_resource type="Texture2D" uid="uid://itt24le85rn5" path="res://scenes/inicio1.png" id="2_5r77a"]
 [ext_resource type="Texture2D" uid="uid://ge71bk8c2mm4" path="res://scenes/inicio2.png" id="3_u0xkp"]
 [ext_resource type="Texture2D" uid="uid://cx1p82stdtmq2" path="res://scenes/inicio3.png" id="4_bug86"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://c84quwt7qyeyu" path="res://scenes/inicio7.png" id="8_3dgso"]
 [ext_resource type="Texture2D" uid="uid://cpvu1r1as4j6a" path="res://scenes/inicio8.png" id="9_rybd4"]
 [ext_resource type="Texture2D" uid="uid://cifhgk661sxku" path="res://scenes/inicio9.png" id="10_v31s4"]
+[ext_resource type="Texture2D" uid="uid://b0fq78tig3nxt" path="res://scenes/controls-left.png" id="13_k8wtm"]
+[ext_resource type="Texture2D" uid="uid://cfap6rtl3qxy3" path="res://scenes/controls-right.png" id="14_dr3bt"]
 
 [sub_resource type="Animation" id="Animation_ucri6"]
 length = 0.1
@@ -278,7 +280,6 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_tjnls"]
 length = 1.1
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = false
@@ -452,6 +453,7 @@ visible = false
 texture_filter = 1
 texture = ExtResource("7_x83it")
 hframes = 2
+frame = 1
 metadata/_aseprite_wizard_config_ = {
 "i_mode": -1,
 "keep_anim_length": false,
@@ -562,6 +564,7 @@ texture_filter = 1
 texture = ExtResource("9_rybd4")
 hframes = 2
 vframes = 2
+frame = 2
 metadata/_aseprite_wizard_config_ = {
 "i_mode": -1,
 "keep_anim_length": false,
@@ -590,6 +593,7 @@ texture_filter = 1
 texture = ExtResource("10_v31s4")
 hframes = 4
 vframes = 3
+frame = 10
 metadata/_aseprite_wizard_config_ = {
 "i_mode": -1,
 "keep_anim_length": false,
@@ -611,3 +615,31 @@ libraries = {
 "": SubResource("AnimationLibrary_cv2mp")
 }
 autoplay = "default"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 960.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(0.0235294, 0, 0.0745098, 1)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(128, 920)
+texture = ExtResource("13_k8wtm")
+hframes = 2
+metadata/_edit_group_ = true
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"slice_section": false
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(232, 920)
+texture = ExtResource("14_dr3bt")
+hframes = 2

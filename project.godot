@@ -19,6 +19,7 @@ config/icon="res://icono.png"
 
 Global="*res://Global.gd"
 SceneTransition="*res://scenes/scene_transition.tscn"
+GlobalAudioStreamPlayer="*res://scenes/GlobalAudioStreamPlayer.tscn"
 
 [display]
 
