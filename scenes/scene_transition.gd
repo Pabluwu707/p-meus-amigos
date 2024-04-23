@@ -5,6 +5,7 @@ extends CanvasLayer
 @export_file("*.tscn") var level2: String
 @export_file("*.tscn") var level3: String
 @export_file("*.tscn") var menu: String
+@export_file("*.tscn") var opening: String
 @export_file("*.tscn") var goodending: String
 @export_file("*.tscn") var badending: String
 @export_file("*.tscn") var start: String
@@ -51,3 +52,11 @@ func to_start() -> void:
 	await animation_player.animation_finished
 	get_tree().change_scene_to_file(start)
 	animation_player.play_backwards("fade")
+	
+func to_opening() :
+	# Plays the Fade animation and wait until it finishes
+	animation_player.play("fade")
+	await animation_player.animation_finished
+	get_tree().change_scene_to_file(opening)
+	animation_player.play_backwards("fade")
+	

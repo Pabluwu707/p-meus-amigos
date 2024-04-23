@@ -6,6 +6,7 @@
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_ojl76")
 metadata/_aseprite_wizard_config_ = {
 "i_mode": 1,

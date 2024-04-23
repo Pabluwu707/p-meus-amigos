@@ -66,6 +66,7 @@ offset_left = 823.0
 offset_top = 862.0
 offset_right = 911.0
 offset_bottom = 885.0
+theme_override_colors/font_color = Color(0.223529, 0.682353, 0.27451, 1)
 theme_override_fonts/font = ExtResource("3_rtcyx")
 text = "999"
 horizontal_alignment = 1

@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://cygi4mnblusu5"]
+
+[ext_resource type="Script" path="res://scenes/GlobalAudioStreamPlayer.gd" id="1_0orhm"]
+
+[sub_resource type="Animation" id="Animation_oq7qd"]
+resource_name = "fade_out_volumen"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
+
+[sub_resource type="Animation" id="Animation_fvei1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_svh0g"]
+_data = {
+"RESET": SubResource("Animation_fvei1"),
+"fade_out_volumen": SubResource("Animation_oq7qd")
+}
+
+[node name="GlobalAudioStreamPlayer" type="AudioStreamPlayer"]
+script = ExtResource("1_0orhm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_svh0g")
+}

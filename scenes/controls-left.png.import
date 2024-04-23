@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hh0ofyvelwxh"
-path="res://.godot/imported/portada.png-d5233859ae8acc905f0ded82410dd938.ctex"
+uid="uid://b0fq78tig3nxt"
+path="res://.godot/imported/controls-left.png-282d8fdd76b8eccc7ccc4cbf1b13213c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://aseprite/portada.png"
-dest_files=["res://.godot/imported/portada.png-d5233859ae8acc905f0ded82410dd938.ctex"]
+source_file="res://scenes/controls-left.png"
+dest_files=["res://.godot/imported/controls-left.png-282d8fdd76b8eccc7ccc4cbf1b13213c.ctex"]
 
 [params]
 

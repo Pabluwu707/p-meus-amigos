@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://0rthx7bvralu" path="res://scenes/player.tscn" id="1_osxso"]
 [ext_resource type="Script" path="res://scripts/level_intro.gd" id="1_xth50"]
-[ext_resource type="Texture2D" uid="uid://bkygpofersocq" path="res://BORRAR.png" id="2_mcccp"]
 [ext_resource type="PackedScene" uid="uid://dajifm4ulodf8" path="res://scenes/fondo_parallax.tscn" id="3_n0ud4"]
 [ext_resource type="PackedScene" uid="uid://p2sud2l3qm5l" path="res://scenes/camera_2d.tscn" id="4_xu1jq"]
 [ext_resource type="PackedScene" uid="uid://bqdrt7oox6d1c" path="res://scenes/asteroid_hazard.tscn" id="5_43mx6"]
@@ -13,6 +12,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2877y"]
 size = Vector2(164, 1029)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vbn5n"]
+load_path = "res://.godot/imported/BORRAR.png-2b4e9ffa06f47666f8789817893e49b3.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dmjbb"]
 size = Vector2(153, 982)
@@ -132,7 +134,7 @@ shape = SubResource("RectangleShape2D_2877y")
 z_index = -1
 position = Vector2(291, 260)
 scale = Vector2(0.46582, 0.46582)
-texture = ExtResource("2_mcccp")
+texture = SubResource("CompressedTexture2D_vbn5n")
 
 [node name="Fondo Parallax" parent="." instance=ExtResource("3_n0ud4")]
 
@@ -251,7 +253,7 @@ stream = ExtResource("10_ooe21")
 
 [node name="NextSceneTimet" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 12.0
+wait_time = 5.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Player" method="_on_area_2d_body_entered"]

@@ -22,7 +22,7 @@ func _ready():
 	else:
 		var text = "DÍA %s"
 		diatexto.text = text % str(Global.dia+1)
-	dinero.text = str(Global.current_dinero)
+	dinero.text = str(str(Global.current_dinero),"/350")
 	setup_botones()
 
 

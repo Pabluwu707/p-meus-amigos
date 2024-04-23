@@ -4,8 +4,6 @@ var next_action = ""
 var previous_action = ""
 var current_slide: int = 0
 
-signal end_cutscene
-
 func _ready():
 	for child in get_children():
 		child.visible = false
@@ -23,15 +21,20 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed(next_action):
 		if (current_slide+1 == get_children().size()):
-			end_cutscene.emit()
+			GlobalAudioStreamPlayer.fade_out_music()
+			SceneTransition.to_menu()
 			queue_free()
 		else:
 			get_children()[current_slide].visible = false
+			get_children()[current_slide+1].get_child(0).stop(true)
+			get_children()[current_slide+1].get_child(0).play()
 			get_children()[current_slide+1].visible = true
 			current_slide += 1
-		
+	 	
 	if Input.is_action_just_pressed(previous_action) && current_slide-1 >= 0:
 		get_children()[current_slide].visible = false
+		get_children()[current_slide-1].get_child(0).stop(true)
+		get_children()[current_slide-1].get_child(0).play()
 		get_children()[current_slide-1].visible = true
 		current_slide -= 1
 	
